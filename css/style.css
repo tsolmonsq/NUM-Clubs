@@ -59,11 +59,11 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-}
+} 
 .section-1 h1{
     font-size: var(--size-10);
     color: var(--primary-orange);
-}
+} 
 .section-1 img{
     width: 500px;
 }
