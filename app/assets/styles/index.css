@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500&family=Varela+Round&display=swap');
+:root{
+    --primary-orange: #E55604;
+    --primary-green: #0BB5B5;
+    --default-white: #FFFFFF;
+    --default-pink: #FDF6F5;
+    --default-lightgreen: #F6FFFE;
+    --text-gray: #3D3838;
+    --contact-green: #69B0B0;
+
+    --bs-default: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    max-width: 100%;
+    background-color: var(--default-pink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.9rem;
+    & img{
+        width: 4rem;
+    }
+    & button{
+        width: 7rem;
+        height: 2rem;
+        border-radius: 0.625rem;
+        border: solid 0.2rem var(--primary-green);
+        color: var(--text-gray);
+    }
+}
+
+.large-hero{
+    max-width: 100%;
+    background: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%);
+    display: flex;
+    align-items: center;
+
+    & .content{
+        width: 100%;
+        top: 50%;
+        left: 0;
+        text-align: center;
+        margin: 5rem;
+        & h1{
+            font-size: 6rem;
+            font-weight: bold;
+            max-width: 42.25rem;
+            color: var(--primary-orange);
+            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & p{
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 46.125rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & img{
+            width: 46rem;
+        }
+    }
+}
+
+.search{
+    max-width: 24.4rem;
+    height: 2.875rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    & input{
+        border: solid 0.09rem var(--primary-orange);
+        border-radius: 22.5rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+        height: 10px;
+
+    }
+    & button{
+        width: 2.875rem;
+        height: 2.875rem;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--primary-orange);
+        color: var(--default-white);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+.category-slider{
+    max-width: 100%;
+    overflow: hidden;
+    & h2{
+        color: var(--text-gray);
+        margin: 1rem 2.25rem;
+    }
+    & .main{
+        display: flex;
+        justify-content: space-evenly;
+        width: 200%;
+        transition: 1s;
+    }
+    #two:checked ~ & .main{
+        margin-left: -100%;
+    }
+    & .page{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 1.25rem;
+        justify-content: space-between;
+    }
+    & .button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        & label{
+            height: 1rem;
+            width: 1rem;
+            border-radius: 20px;
+            background: var(--primary-orange);
+            margin: 0 0.25rem;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+    }
+
+}
+.category-card{
+    width: 10rem;
+    padding: 1rem;
+    transition: all 0.4s ease;
+
+    & img{
+        max-width: 100%;
+        height: 100px;
+        box-shadow: var(--bs-default);
+        border-radius: 0.75rem
+    }
+    & h3{
+        font-size: 1.25rem;
+        font-weight: 500;
+        text-align: center;
+        color: var(--text-gray);
+    }
+}
+
+.category-card:hover{
+    transform: translateY(-15px);
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+footer{
+    max-width: 100%;
+    background-color: var(--default-lightgreen);
+    text-align: center;
+    padding: 0.9rem;
+    & p{
+        width: 100%;
+    }
+    & address{
+        width: 100%;
+        text-decoration: none;
+        & a{
+            color: var(--contact-green);
+            margin: 0.1rem;
+        }
+    }
+}

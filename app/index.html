@@ -29,80 +29,81 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./assets/styles/index.css">
     <title>NUM Student Clubs</title>
   </head>
     <header class="header">
-        <img class="header__logo" src="assets/images/logo.png" alt="NUM Clubs logo" />
-      <button class="header__login-button" id="login">Нэвтрэх</button>
+        <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+      <button id="login">Нэвтрэх</button>
     </header>
     <main>
       <section class="large-hero">
-        <div class="large-hero__content">
-          <h1 class="large-hero__title">NUM Clubs</h1>
-          <p class="large-hero__description">
+        <div class="content">
+          <h1>NUM Clubs</h1>
+          <p>
               МУИС-ийн хэмжээнд үйл ажиллагаа явуулж буй оюутны клубуудын мэдээллийг
               нэг дороос
           </p>
           <div class="search">
-            <input class="search__input" id="site-search" placeholder="Хайлт хийх" />
-            <button class="search__button" aria-label="Search" type="submit">
+            <input id="site-search" placeholder="Хайлт хийх" />
+            <button aria-label="Search" type="submit">
               <i class="fas fa-search"></i>
             </button>
           </div>
-          <img class="large-hero__image" src="assets/images/homepage-dec.png" alt="homepage" />
+          <img src="assets/images/homepage-dec.png" alt="homepage" />
         </div>   
       </section>
       <section class="category-slider">       
-          <h2 class="category-slider__title">Ангилал</h2>
+          <h2>Ангилал</h2>
           <input type="radio" name="dot" id="one">
           <input type="radio" name="dot" id="two">
-          <div class="category-slider__main">
-            <div class="category-slider__page">
+          <div class="main">
+            <div class="page">
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/supplies.jpg" alt="art" />
-                <h3 class="category-card__title">Дүрслэх урлаг</h3>
+                <img src="./assets/images/supplies.jpg" alt="art" />
+                <h3 >Дүрслэх урлаг</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/lit.jpg" alt="literature" />
-                <h3 class="category-card__title">Уран зохиол</h3>
+                <img src="./assets/images/lit.jpg" alt="literature" />
+                <h3>Уран зохиол</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/sport2.jpeg" alt="sport" />
-                <h3 class="category-card__title">Спорт</h3>
+                <img src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3>Спорт</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/debate2.jpg" alt="debate" />
-                <h3 class="category-card__title">Илтгэл мэтгэлцээн</h3>
+                <img src="./assets/images/debate2.jpg" alt="debate" />
+                <h3>Илтгэл мэтгэлцээн</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/tech.jpg" alt="technology" />
-                <h3 class="category-card__title">Технологи</h3>
+                <img src="./assets/images/tech.jpg" alt="technology" />
+                <h3>Технологи</h3>
               </article>
             </div>
-            <div class="category-slider__page">
+            <div class="page">
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/supplies.jpg" alt="art" />
-                <h3 class="category-card__title">Дүрслэх урлаг</h3>
+                <img src="./assets/images/supplies.jpg" alt="art" />
+                <h3>Дүрслэх урлаг</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/lit.jpg" alt="literature" />
-                <h3 class="category-card__title">Уран зохиол</h3>
+                <img src="./assets/images/lit.jpg" alt="literature" />
+                <h3>Уран зохиол</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/sport2.jpeg" alt="sport" />
-                <h3 class="category-card__title">Спорт</h3>
+                <img src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3>Спорт</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/debate2.jpg" alt="debate" />
-                <h3 class="category-card__title">Илтгэл мэтгэлцээн</h3>
+                <img src="./assets/images/debate2.jpg" alt="debate" />
+                <h3>Илтгэл мэтгэлцээн</h3>
               </article>
               <article class="category-card">
-                <img class= "category-card__img" src="./assets/images/tech.jpg" alt="technology" />
-                <h3 class="category-card__title">Технологи</h3>
+                <img src="./assets/images/tech.jpg" alt="technology" />
+                <h3>Технологи</h3>
               </article>
             </div>
           </div>
-          <div class="category-slider__button">
+          <div class="button">
             <label for="one" class="one"></label>
             <label for="two" class="two"></label>
           </div>
@@ -177,9 +178,9 @@
         <a href="clubs.html">Бүгдийг үзэх</a>
       </section>
     </main>
-    <footer class="footer">
-      <p class="footer__text">Developed by Num Clubs team</p>
-      <address class="footer__contact">  
+    <footer>
+      <p>Developed by Num Clubs team</p>
+      <address>  
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-regular fa-envelope"></i></a>
