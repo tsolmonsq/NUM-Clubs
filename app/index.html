@@ -29,64 +29,91 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
     <title>NUM Student Clubs</title>
   </head>
-  <body class="bg-orange2">
-    <header>
-      <a href="./index.html">
-        <img class="logo" src="./assets/logo.png" alt="NUM Clubs logo" />
-      </a>
-
-      <button id="login">Нэвтрэх</button>
+    <header class="header">
+        <img class="header__logo" src="assets/images/logo.png" alt="NUM Clubs logo" />
+      <button class="header__login-button" id="login">Нэвтрэх</button>
     </header>
     <main>
-      <section class="section-1 bg-gradient">
-        <h1>NUM Clubs</h1>
-        <p>
-          МУИС-ийн хэмжээнд үйл ажиллагаа явуулж буй оюутны клубуудын мэдээллийг
-          нэг дороос
-        </p>
-        <div class="search-container">
-          <input type="search" id="site-search" placeholder="Хайлт хийх" />
-          <button aria-label="Search" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-        <img src="./assets/homepage-dec.png" alt="homepage" />
+      <section class="large-hero">
+        <div class="large-hero__content">
+          <h1 class="large-hero__title">NUM Clubs</h1>
+          <p class="large-hero__description">
+              МУИС-ийн хэмжээнд үйл ажиллагаа явуулж буй оюутны клубуудын мэдээллийг
+              нэг дороос
+          </p>
+          <div class="search">
+            <input class="search__input" id="site-search" placeholder="Хайлт хийх" />
+            <button class="search__button" aria-label="Search" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <img class="large-hero__image" src="assets/images/homepage-dec.png" alt="homepage" />
+        </div>   
       </section>
-      <section class="category">
-        <h2>Ангилал</h2>
-        <div class="category-container">
-          <article class="category-item">
-            <img src="./assets/supplies.jpg" alt="art" />
-            <h3>Дүрслэх урлаг</h3>
-          </article>
-          <article class="category-item">
-            <img src="./assets/lit.jpg" alt="literature" />
-            <h3>Уран зохиол</h3>
-          </article>
-          <article class="category-item">
-            <img src="./assets/sport2.jpeg" alt="sport" />
-            <h3>Спорт</h3>
-          </article>
-          <article class="category-item">
-            <img src="./assets/debate2.jpg" alt="debate" />
-            <h3>Илтгэл мэтгэлцээн</h3>
-          </article>
-          <article class="category-item">
-            <img src="./assets/tech.jpg" alt="technology" />
-            <h3>Технологи</h3>
-          </article>
-        </div>
+      <section class="category-slider">       
+          <h2 class="category-slider__title">Ангилал</h2>
+          <input type="radio" name="dot" id="one">
+          <input type="radio" name="dot" id="two">
+          <div class="category-slider__main">
+            <div class="category-slider__page">
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/supplies.jpg" alt="art" />
+                <h3 class="category-card__title">Дүрслэх урлаг</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/lit.jpg" alt="literature" />
+                <h3 class="category-card__title">Уран зохиол</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3 class="category-card__title">Спорт</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/debate2.jpg" alt="debate" />
+                <h3 class="category-card__title">Илтгэл мэтгэлцээн</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/tech.jpg" alt="technology" />
+                <h3 class="category-card__title">Технологи</h3>
+              </article>
+            </div>
+            <div class="category-slider__page">
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/supplies.jpg" alt="art" />
+                <h3 class="category-card__title">Дүрслэх урлаг</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/lit.jpg" alt="literature" />
+                <h3 class="category-card__title">Уран зохиол</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3 class="category-card__title">Спорт</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/debate2.jpg" alt="debate" />
+                <h3 class="category-card__title">Илтгэл мэтгэлцээн</h3>
+              </article>
+              <article class="category-card">
+                <img class= "category-card__img" src="./assets/images/tech.jpg" alt="technology" />
+                <h3 class="category-card__title">Технологи</h3>
+              </article>
+            </div>
+          </div>
+          <div class="category-slider__button">
+            <label for="one" class="one"></label>
+            <label for="two" class="two"></label>
+          </div>
       </section>
       <section class="featured-clubs">
         <h2>Клубууд</h2>
         <div class="club-card-container">
           <article class="club-card">
             <h3>Artemisia art club</h3>
-            <img src="./assets/art_gallery.jpg" alt="artemisia cover" />
-            <img src="./assets/artemisia_logo.jpg" alt="artemisia logo" />
+            <img src="./assets/images/art_gallery.jpg" alt="artemisia cover" />
+            <img src="./assets/images/artemisia_logo.jpg" alt="artemisia logo" />
             <span>Дүрслэх урлаг</span>
             <p>Artemisia МУИС-ийн уран зургийн клуб</p>
             <ul>
@@ -106,8 +133,8 @@
           </article>
           <article class="club-card">
             <h3>Artemisia art club</h3>
-            <img src="./assets/art_gallery.jpg" alt="artemisia cover" />
-            <img src="./assets/artemisia_logo.jpg" alt="artemisia logo" />
+            <img src="./assets/images/art_gallery.jpg" alt="artemisia cover" />
+            <img src="./assets/images/artemisia_logo.jpg" alt="artemisia logo" />
             <span>Дүрслэх урлаг</span>
             <p>Artemisia МУИС-ийн уран зургийн клуб</p>
             <ul>
@@ -127,8 +154,8 @@
           </article>
           <article class="club-card">
             <h3>Artemisia art club</h3>
-            <img src="./assets/art_gallery.jpg" alt="artemisia cover" />
-            <img src="./assets/artemisia_logo.jpg" alt="artemisia_logo" />
+            <img src="./assets/images/art_gallery.jpg" alt="artemisia cover" />
+            <img src="./assets/images/artemisia_logo.jpg" alt="artemisia_logo" />
             <span>Дүрслэх урлаг</span>
             <p>Artemisia МУИС-ийн уран зургийн клуб</p>
             <ul>
@@ -150,21 +177,14 @@
         <a href="clubs.html">Бүгдийг үзэх</a>
       </section>
     </main>
-    <footer>
-      <p>Developed by Num Clubs team</p>
-      <address>
-        <ul>
-          <li>
+    <footer class="footer">
+      <p class="footer__text">Developed by Num Clubs team</p>
+      <address class="footer__contact">  
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          </li>
-          <li>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
             <a href="#"><i class="fa-regular fa-envelope"></i></a>
-          </li>
-        </ul>
       </address>
     </footer>
+    <script src = "bundled.js"></script>
   </body>
 </html>
