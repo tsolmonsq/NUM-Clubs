@@ -4,17 +4,25 @@
     --primary-green: #0BB5B5;
     --default-white: #FFFFFF;
     --default-pink: #FDF6F5;
+    --default-pink2: #ECE8E8;
     --default-lightgreen: #F6FFFE;
     --text-gray: #3D3838;
+    --text-gray2: #4A4A4A;
+    --text-yellow: #FBD13C;
     --contact-green: #69B0B0;
 
     --bs-default: 0 5px 10px rgba(0, 0, 0, 0.25);
+
 }
 *{
     padding: 0;
     margin: 0;
 }
-.header{
+body{
+    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+}
+header{
     max-width: 100%;
     background-color: var(--default-pink);
     display: flex;
@@ -50,16 +58,13 @@
             font-weight: bold;
             max-width: 42.25rem;
             color: var(--primary-orange);
-            margin: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 1rem auto;
         }
         & p{
             font-size: 1.25rem;
             color: var(--text-gray);
             max-width: 46.125rem;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 1rem auto;
         }
         & img{
             width: 46rem;
@@ -73,8 +78,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     & input{
         border: solid 0.09rem var(--primary-orange);
         border-radius: 22.5rem;
@@ -169,6 +173,8 @@ footer{
     padding: 0.9rem;
     & p{
         width: 100%;
+        margin: 1rem 0;
+        color: var(--text-gray);
     }
     & address{
         width: 100%;
