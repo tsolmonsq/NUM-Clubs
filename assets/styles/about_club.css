@@ -155,7 +155,7 @@
 .members{
     width: 90%;
     margin: 1rem auto;
-    display: flex;
+    display: gi;
     flex-direction: column;
     color: var(--text-gray);
 }
