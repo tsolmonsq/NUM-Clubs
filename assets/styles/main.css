@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    --primary-orange: #E55604;
+    --primary-green: #0BB5B5;
+    --default-white: #FFFFFF;
+    --default-pink: #FDF6F5;
+    --default-pink2: #ECE8E8;
+    --default-lightgreen: #F6FFFE;
+    --text-gray: #3D3838;
+    --text-gray2: #4A4A4A;
+    --text-yellow: #FBD13C;
+    --contact-green: #69B0B0;
+    --border-gray: #D0D0D0;
+    --bs-default: 0 5px 10px rgba(0, 0, 0, 0.25);
+    --bs-orange: 0 1px 3px var(--primary-orange);
+
+    font-family: 'M PLUS 1', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+
+    
+}

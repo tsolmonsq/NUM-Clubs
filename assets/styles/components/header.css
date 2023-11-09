@@ -1,0 +1,30 @@
+header{
+    max-width: 100%;
+    background-color: var(--default-pink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.9rem;
+
+    & img{
+        width: 4rem;
+    }
+    & button{
+        width: 7rem;
+        height: 2rem;
+        border-radius: 0.625rem;
+        border: solid 0.2rem var(--primary-green);
+        color: var(--text-gray);
+    }
+
+    @media (max-width: 48rem){
+        padding: 0.3rem 0.45rem;
+        & img{
+            width: 3rem;
+        }
+        & button{
+            display: none;
+        }
+    }
+
+}
