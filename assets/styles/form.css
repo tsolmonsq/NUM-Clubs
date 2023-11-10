@@ -1,0 +1,130 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto;
+  }
+  
+  /* heading */
+  h1, h2 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  
+
+
+
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%; 
+  }
+  
+  .input-group label {
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .input-row {
+      flex-direction: column;
+    }
+  
+    .input-group {
+      width: 100%;
+    }
+  
+    .input-group:not(:last-child) {
+      margin-bottom: 20px; 
+    }
+  }
+  
+
+
+  
+  label {
+    margin-top: 20px;
+    color: #888;
+  }
+  
+  input[type="text"] {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+
+  }
+  
+ 
+  input[type="radio"] {
+    margin-right: 10px;
+    margin-top: 0;
+  }
+  
+ 
+
+  .tuvshin{
+    display: flex;
+
+
+    & .radio-option{
+        display: flex;
+    
+    margin-right: 20px;
+    }
+
+
+
+
+  }
+
+
+
+ 
+  
+  
+  /* batalgaajuulah button*/
+  input[type="submit"] {
+    background-color: #E55604;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: var(#3D3838);
+  }
+  
+ 
