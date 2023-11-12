@@ -13,7 +13,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             if (user) {
                 window.location.href = '/index.html'; // Redirect the user
             } else {
-                messageElement.textContent = 'email hayg buruu baina!';
+                messageElement.textContent = 'email хаяг буруу байна!';
             }
         })
         .catch(error => {
