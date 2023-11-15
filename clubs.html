@@ -58,7 +58,7 @@
             </select>
           </form>
         </div>
-        <div class="cards-container">
+        <div class="cards-container" id="cards-container-1">
           <article class="club-card">
             <img
               class="cover"
@@ -490,5 +490,89 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
+    <script>
+      const clubsData = [
+        {
+          name: "Ajsjsjs art club",
+          category: "Дүрслэх урлаг",
+          coverImage: "./assets/images/art_gallery.jpg",
+          logo: "./assets/images/artemisia_logo.jpg",
+          description: "Artemisia МУИС-ийн уран зургийн клуб",
+          foundedYear: "2018 он",
+          members: "78 гишүүнтэй",
+          activities: "Элсэлт авч байгаа",
+        },
+        {
+          name: "Acjdbkjdbcka art club",
+          category: "Дүрслэх урлаг",
+          coverImage: "./assets/images/art_gallery.jpg",
+          logo: "./assets/images/artemisia_logo.jpg",
+          description: "Artemisia МУИС-ийн уран зургийн клуб",
+          foundedYear: "2018 он",
+          members: "78 гишүүнтэй",
+          activities: "Элсэлт авч байгаа",
+        },
+        {
+          name: "Acdgcygd art club",
+          category: "Дүрслэх урлаг",
+          coverImage: "./assets/images/art_gallery.jpg",
+          logo: "./assets/images/artemisia_logo.jpg",
+          description: "Artemisia МУИС-ийн уран зургийн клуб",
+          foundedYear: "2018 он",
+          members: "78 гишүүнтэй",
+          activities: "Элсэлт авч байгаа",
+        },
+      ];
+
+      class ClubPage {
+        constructor(containerId, data) {
+          this.container = document.getElementById(containerId);
+          this.data = data;
+        }
+
+        createClubCard(club) {
+          const card = document.createElement("article");
+          card.classList.add("club-card");
+
+          card.innerHTML = `
+              <img class="cover" src="${club.coverImage}" alt="${club.name}_cover" />
+              <div class="card-head">
+                <img class="club-logo" src="${club.logo}" alt="${club.name}_logo" />
+                <div class="card-head-txt">
+                  <span class="club-tag">${club.category}</span>
+                  <h3>${club.name}</h3>
+                </div>
+              </div>
+              <p class="club-description">${club.description}</p>
+              <ul class="card-status">
+                <li>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <p>${club.foundedYear}</p>
+                </li>
+                <li>
+                  <i class="fa-regular fa-user"></i>
+                  <p>${club.members}</p>
+                </li>
+                <li>
+                  <i class="fa-regular fa-pen-to-square"></i>
+                  <p>${club.activities}</p>
+                </li>
+              </ul>
+            `;
+
+          return card;
+        }
+
+        Render() {
+          this.data.forEach((club) => {
+            const clubCard = this.createClubCard(club);
+            this.container.appendChild(clubCard);
+          });
+        }
+      }
+
+      const clubPage = new ClubPage("cards-container-1", clubsData);
+      clubPage.Render();
+    </script>
   </body>
 </html>
