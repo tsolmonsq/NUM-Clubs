@@ -2,12 +2,10 @@
 @import url("./components/header.css");
 @import url("./components/search.css");
 @import url("./components/footer.css");
-@import url("./components/clubCard.css");
+@import url("./components/club_card.css");
 @import url("./components/category_dropdown.css");
 
-main{
-    
-}
+
 .clubs{
     max-width: 100%;
     padding: 2rem 4rem;
@@ -21,6 +19,7 @@ main{
         padding: 2rem 5rem;
         padding-bottom: 0;
         max-width: 90rem;
+        min-width: 18rem;
         display: flex;
         background-color: var(--default-pink2);
         & .search{
@@ -56,6 +55,7 @@ main{
 .cards-container{
     background-color: var(--default-pink2);
     max-width: 90rem;
+    min-width: 20rem;
     padding: 2rem 4rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));

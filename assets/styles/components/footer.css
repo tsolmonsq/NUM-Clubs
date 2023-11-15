@@ -1,5 +1,5 @@
 footer{
-    max-width: 100%;
+    width: 100%;
     background-color: var(--default-lightgreen);
     text-align: center;
     padding: 0.9rem;

@@ -1,5 +1,5 @@
 header{
-    max-width: 100%;
+    width: 100%;
     background-color: var(--default-pink);
     display: flex;
     align-items: center;

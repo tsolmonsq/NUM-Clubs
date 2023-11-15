@@ -1,11 +1,16 @@
+@import url("./components/header.css");
+@import url("./components/footer.css");
+@import url("./main.css");
+
 /* about club page css */
+
 
 .about-club{
     max-width: 70rem;
     height: auto;
-    background-color: #FFFFFF;
+    background-color: var(--default-white);
     margin: 1rem auto;
-    border-radius: 1.25rem 1.25rem 0 0;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
     & .cover{
         object-fit: cover;
         width: 100%;
@@ -46,6 +51,14 @@
             width: 30%;
             display: flex;
             flex-direction: column;
+        }
+        @media (max-width: 48rem){
+            & .left{
+                width: 100%;
+            }
+            & .right{
+                width: 100%;
+            }
         }
     }
 }
@@ -130,7 +143,8 @@
         border: none;
         background-color: var(--primary-orange);
         color: var(--default-white);
-        padding: 0.2rem;
+        padding: 0.3rem;
+        cursor: pointer;
     }
 }
 
@@ -143,9 +157,14 @@
     background-color: var(--default-white);
     color: var(--text-gray);
     margin: 1rem 0;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--primary-orange);
+        color: var(--default-white);
+    }
 }
 .club-contact{
-    width: 70%;
+    width: 15rem;
     font-style: normal;
     background-color: var(--default-white);
     padding: 1.3rem;
@@ -188,7 +207,7 @@
     } 
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 48rem) {
     .container{
         display: flex;
     }
