@@ -7,14 +7,13 @@
 
 .large-hero{
     max-width: 100%;
-    background: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%);
+    background: var(--bg-gradient);
     display: flex;
     align-items: center;
 
     & .content{
         width: 100%;
-        // top: 50%;
-        // left: 0;
+        
         text-align: center;
         margin: 5rem;
         display: flex;
@@ -22,10 +21,8 @@
         align-items: center;
         & h1{
             font-size: 6rem;
-            font-weight: bold;
-            // max-width: 42.25rem;
+            font-weight: bold;       
             color: var(--primary-orange);
-            // color: #E55604;
             margin: 1rem auto;
         }
         & p{

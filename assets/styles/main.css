@@ -17,6 +17,8 @@ html{
     --bs-default: 0 5px 10px rgba(0, 0, 0, 0.25);
     --bs-orange: 0 1px 3px var(--primary-orange);
 
+    --bg-gradient: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%);
+
     font-family: 'M PLUS 1', sans-serif;
     font-family: 'Varela Round', sans-serif;
 

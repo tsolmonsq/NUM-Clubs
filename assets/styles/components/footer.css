@@ -2,7 +2,7 @@ footer{
     width: 100%;
     background-color: var(--default-lightgreen);
     text-align: center;
-    padding: 0.9rem;
+    padding: 0.9rem 0;
     & p{
         width: 100%;
         margin: 1rem 0;

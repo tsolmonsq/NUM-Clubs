@@ -4,10 +4,11 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.6rem 0.9rem;
+    // padding: 0.6rem 0.9rem;
 
     & img{
         width: 4rem;
+        margin: 0.6rem 0.9rem;
     }
     & button{
         width: 7rem;
@@ -15,11 +16,12 @@ header{
         border-radius: 0.625rem;
         border: solid 0.2rem var(--primary-green);
         color: var(--text-gray);
+        margin: 0.6rem 0.9rem;
     }
 
     @media (max-width: 48rem){
-        padding: 0.3rem 0.45rem;
         & img{
+            margin: 0.3rem 0.45rem;
             width: 3rem;
         }
         & button{
