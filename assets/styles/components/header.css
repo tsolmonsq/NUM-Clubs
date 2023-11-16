@@ -4,6 +4,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     // padding: 0.6rem 0.9rem;
 
     & img{
@@ -17,6 +18,12 @@ header{
         border: solid 0.2rem var(--primary-green);
         color: var(--text-gray);
         margin: 0.6rem 0.9rem;
+        cursor: pointer;
+        transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+        &:hover{
+            background-color: var(--primary-green);
+            color: var(--default-white);
+        }
     }
 
     @media (max-width: 48rem){

@@ -6,6 +6,8 @@
     background-color: var(--default-white);
     box-shadow: var(--bs-default);
     border-radius: 2rem;
+    transition: all 0.4s ease;
+    
     cursor: pointer;
     & .cover{
         width: 100%;
@@ -27,6 +29,9 @@
             margin-left: 2rem;
             & h3{
                 margin-top: 1rem;
+                &:hover{
+                    color: var(--hover-gray);
+                }
             }
         }
     }
@@ -58,5 +63,12 @@
     & .club-description{
         margin-left: 5%;
         margin-top: 1.2rem;
+        &:hover{
+            color: var(--hover-gray);
+        }
+    }
+    &:hover{
+        transform: translateY(-15px);
+        cursor: pointer;
     }
 }

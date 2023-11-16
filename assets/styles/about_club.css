@@ -83,6 +83,7 @@
         background-color: var(--default-white);
         padding: 1.3rem;
         box-shadow: var(--bs-default);
+        transition: border-color 0.5s, background-color 0.5s, color 0.5s;
         & h3{
             color: var(--text-gray);
             margin-bottom: 0.4rem;
@@ -91,6 +92,9 @@
             color: var(--text-yellow);
             font-size: 1rem;
             margin: 0 0.4rem;
+        }
+        &:hover{
+            box-shadow: var(--bs-default-hover);
         }
     }
 }
@@ -158,6 +162,7 @@
     color: var(--text-gray);
     margin: 1rem 0;
     cursor: pointer;
+    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
     &:hover{
         background-color: var(--primary-orange);
         color: var(--default-white);
