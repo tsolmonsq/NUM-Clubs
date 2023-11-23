@@ -48,13 +48,13 @@
             </button>
           </div>
           <form class="category-dropdown">
-            <select name="cars" id="cars">
-              <option value="audi">Ангилалаар шүүх</option>
-              <option value="volvo">Дүрслэх урлаг</option>
-              <option value="saab">Уран зохиол</option>
-              <option value="opel">Спорт</option>
-              <option value="audi">Илтгэл мэтгэлцээн</option>
-              <option value="audi">Технологи</option>
+            <select name="clubs" id="clubs">
+              <option value="">Бүгд</option>
+              <option value="Дүрслэх урлаг">Дүрслэх урлаг</option>
+              <option value="Уран зохиол">Уран зохиол</option>
+              <option selected value="Спорт">Спорт</option>
+              <option value="Илтгэл мэтгэлцээн">Илтгэл мэтгэлцээн</option>
+              <option value="Технологи">Технологи</option>
             </select>
           </form>
         </div>
@@ -70,10 +70,20 @@
       </address>
     </footer>
     <script>
+      document.getElementById("clubs").addEventListener("change", function () {
+        const selectedValue = this.value;
+        if (selectedValue !== "") {
+          window.location.href = `./clubs.html?category=${selectedValue}`;
+        } else {
+          window.location.href = `./clubs.html`;
+        }
+      });
+
       class ClubPage {
-        constructor(containerId, data) {
+        constructor(containerId) {
           this.container = document.getElementById(containerId);
           this.data = [];
+          this._tagFilter = this.getUrlParam("category");
         }
 
         async fetchData() {
@@ -83,9 +93,22 @@
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
             this.data = await response.json();
+            this._list = this.filterByTag(this.data);
+            this.render();
           } catch (error) {
             console.error("Error fetching data:", error.message);
           }
+        }
+
+        filterByTag(clubData) {
+          if (!this._tagFilter || this._tagFilter === "Бүгд") {
+            return clubData;
+          }
+
+          return clubData.filter(
+            (club) =>
+              club.category.toLowerCase() === this._tagFilter.toLowerCase()
+          );
         }
 
         createClubCard(club) {
@@ -117,19 +140,26 @@
                 </li>
               </ul>
             `;
-
           return card;
         }
 
-        Render() {
-          this.data.forEach((club) => {
+        render() {
+          this.container.innerHTML = "";
+          this._list.forEach((club) => {
             const clubCard = this.createClubCard(club);
             this.container.appendChild(clubCard);
+            //
           });
         }
+
+        getUrlParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
+
         async init() {
           await this.fetchData();
-          this.Render();
+          this.render();
         }
       }
 
