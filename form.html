@@ -30,99 +30,103 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link rel="stylesheet" href="./assets/styles/form.css">
     <title>NUM Student Clubs</title>
   </head>
   <body>
     <form action="">
       <h2>Artemisia art Club</h2>
       <h1>Элсэлтийн форум</h1>
-      <label for="name">Нэр</label>
-      <input type="text" name="" id="name" placeholder="Нэрээ бичнэ үү." />
 
-      <label for="sisi">SISI дугаар</label>
-      <input
-        type="text"
-        name=""
-        id="sisi"
-        placeholder="SISI дугаараа бичнэ үү."
-      />
-
-      <label for="email">Email хаяг</label>
-      <input
-        type="text"
-        name=""
-        id="email"
-        placeholder="Email хаягаа бичнэ үү."
-      />
-
-      <label for="phoneNumber">Утасны дугаар</label>
-      <input
-        type="text"
-        name=""
-        id="phoneNumber"
-        placeholder="Утасны дугаараа бичнэ үү."
-      />
-
-      <label for="school">Салбар сургууль</label>
-      <input
-        type="text"
-        name=""
-        id="school"
-        placeholder="Салбар сургуулиа бичнэ үү."
-      />
-
-      <label for="socialAddress">FB эсвэл IG хаяг</label>
-      <input
-        type="text"
-        name=""
-        id="socialAddress"
-        placeholder="Өөрийн FB, IG линк."
-      />
+   
+      <div class="input-row">
+        <div class="input-group">
+          <label for="name">Нэр</label>
+          <input type="text" id="name" placeholder="Нэрээ бичнэ үү." />
+        </div>
+        <div class="input-group">
+          <label for="sisi">SISI дугаар</label>
+          <input type="text" id="sisi" placeholder="SISI дугаараа бичнэ үү." />
+        </div>
+      </div>
+      
+      <div class="input-row">
+        <div class="input-group">
+          <label for="email">Email хаяг</label>
+          <input type="text" id="email" placeholder="Email хаягаа бичнэ үү." />
+        </div>
+        <div class="input-group">
+          <label for="phoneNumber">Утасны дугаар</label>
+          <input type="text" id="phoneNumber" placeholder="Утасны дугаараа бичнэ үү." />
+        </div>
+      </div>
+      
+      <div class="input-row">
+        <div class="input-group">
+          <label for="school">Салбар сургууль</label>
+          <input type="text" id="school" placeholder="Салбар сургуулиа бичнэ үү." />
+        </div>
+        <div class="input-group">
+          <label for="socialAddress">FB эсвэл IG хаяг</label>
+          <input type="text" id="socialAddress" placeholder="Өөрийн FB, IG линк." />
+        </div>
+      </div>
+      
 
       <h3 for="level">Суралцаж буй түвшин</h3>
-      <input type="radio" />
-      <label for="one">1-р түвшин</label>
-      <input type="radio" />
-      <label for="two">2-р түвшин</label>
-      <input type="radio" />
-      <label for="three">3-р түвшин</label>
-      <input type="radio" />
-      <label for="four">4-р түвшин</label>
-      <input type="radio" />
-      <label for="fourPlus">4+ түвшин</label>
+   
+      <div class="tuvshin">
 
-      <label for="advantage">Өөрийн давуу тал</label>
-      <input
-        type="text"
-        name=""
-        id="advantage"
-        placeholder="Миний давуу тал бол..."
-      />
+        <div class="radio-option">
+        <input type="radio" id="one" name="level" />
+        <label for="one">1-р түвшин</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="two" name="level" />
+        <label for="two">2-р түвшин</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="three" name="level" />
+        <label for="three">3-р түвшин</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="three" name="level" />
+        <label for="three">4-р түвшин</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="three" name="level" />
+        <label for="three">4+ түвшин</label>
+      </div>
 
-      <label for="disadvantage">Өөрийн сул тал</label>
-      <input
-        type="text"
-        name=""
-        id="disadvantage"
-        placeholder="Миний сул тал бол..."
-      />
 
-      <label for="reason">Элсэж буй шалтгаан</label>
-      <input
-        type="text"
-        name=""
-        id="reason"
-        placeholder="Шалтгаанаа бичнэ үү."
-      />
+      </div>
+      
+     
 
-      <label for="expectation">Клубээс ямар хүлээлттэй байгаа вэ?</label>
-      <input
-        type="text"
-        name=""
-        id="expectation"
-        placeholder="Хүлээлтээ бичнэ үү."
-      />
-      <input type="submit" name="" id="formButton" value="Баталгаажуулах" />
+      <div class="input-container">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="advantage">Өөрийн давуу тал</label>
+            <input type="text" id="advantage" placeholder="Миний давуу тал бол..." />
+          </div>
+          <div class="input-group">
+            <label for="disadvantage">Өөрийн сул тал</label>
+            <input type="text" id="disadvantage" placeholder="Миний сул тал бол..." />
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="reason">Элсэж буй шалтгаан</label>
+            <input type="text" id="reason" placeholder="Шалтгаанаа бичнэ үү." />
+          </div>
+          <div class="input-group">
+            <label for="expectation">Клубээс ямар хүлээлттэй байгаа вэ?</label>
+            <input type="text" id="expectation" placeholder="Хүлээлтээ бичнэ үү." />
+          </div>
+        </div>
+      </div>
+      <input type="submit" id="formButton" value="Баталгаажуулах" />
+      
     </form>
   </body>
 </html>
