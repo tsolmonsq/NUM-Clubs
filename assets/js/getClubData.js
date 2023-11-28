@@ -76,7 +76,6 @@ document.getElementById("clubs").addEventListener("change", function () {
       this._list.forEach((club) => {
         const clubCard = this.createClubCard(club);
         this.container.appendChild(clubCard);
-        //
       });
     }
 
