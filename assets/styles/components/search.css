@@ -1,0 +1,32 @@
+.search{
+    display: flex;
+    gap: 0.6rem;
+    
+    & input{
+        // border: solid 0.09rem var(--primary-orange);
+        border: solid 0.09rem #E55604;
+        border-radius: 22.5rem;
+        padding: 0.6rem;
+        font-size: 1rem;
+        width: 15rem;
+    }
+    & button{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        border: none;
+        // background-color: var(--primary-orange);
+        background-color: #E55604;
+        // color: var(--default-white);
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+        &:hover{
+            background-color: var(--default-white);
+            color: var(--primary-orange);
+            border: solid 2px var(--primary-orange);
+        }
+    }
+}

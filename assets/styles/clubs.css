@@ -1,0 +1,66 @@
+@import url("./main.css");
+@import url("./components/header.css");
+@import url("./components/search.css");
+@import url("./components/footer.css");
+@import url("./components/club_card.css");
+@import url("./components/category_dropdown.css");
+
+.clubs{
+    max-width: 100%;
+    & h2{
+        margin: 0 auto;
+        padding-left: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        max-width: 90rem;
+        color: var(--text-gray);
+    }
+    & .club-filter{
+        margin: 0 auto;
+        max-width: 90rem;
+        min-width: 18rem;
+        display: flex;
+        & .search{
+            width: 20rem;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        & .category-dropdown{
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20rem;
+            margin-left: 6rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            & select{
+                cursor: pointer;
+                border-radius: 22.5rem;
+                padding: 0.6rem;
+                font-size: 1rem;
+                width: 15rem;
+                border: none;
+                box-shadow: var(--bs-orange);
+                color: var(--text-gray);
+            }
+        }
+        
+        @media (max-width: 48rem){
+            flex-direction: column;
+            & .category-dropdown{
+                margin-left: 1.5rem;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+.cards-container{
+    margin: 2rem auto;
+    margin-top: 0;
+    max-width: 90rem;
+    min-width: 20rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+}

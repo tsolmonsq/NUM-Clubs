@@ -49,12 +49,12 @@
           </div>
           <form class="category-dropdown">
             <select name="clubs" id="clubs">
-              <option value="all">Бүгд</option>
-              <option value="art">Дүрслэх урлаг</option>
-              <option value="lit">Уран зохиол</option>
-              <option value="sport">Спорт</option>
-              <option value="pres">Илтгэл мэтгэлцээн</option>
-              <option value="tech">Технологи</option>
+              <option value="">Бүгд</option>
+              <option value="Дүрслэх урлаг">Дүрслэх урлаг</option>
+              <option value="Уран зохиол">Уран зохиол</option>
+              <option selected value="Спорт">Спорт</option>
+              <option value="Илтгэл мэтгэлцээн">Илтгэл мэтгэлцээн</option>
+              <option value="Технологи">Технологи</option>
             </select>
           </form>
         </div>
@@ -69,70 +69,6 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
-    <script>
-      class ClubPage {
-        constructor(containerId, data) {
-          this.container = document.getElementById(containerId);
-          this.data = [];
-        }
-
-        async fetchData() {
-          try {
-            const response = await fetch("./assets/json/clubs.json");
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            this.data = await response.json();
-          } catch (error) {
-            console.error("Error fetching data:", error.message);
-          }
-        }
-
-        createClubCard(club) {
-          const card = document.createElement("article");
-          card.classList.add("club-card");
-
-          card.innerHTML = `
-              <img class="cover" src="${club.coverImage}" alt="${club.name}_cover" />
-              <div class="card-head">
-                <img class="club-logo" src="${club.logo}" alt="${club.name}_logo" />
-                <div class="card-head-txt">
-                  <span class="club-tag">${club.category}</span>
-                  <h3>${club.name}</h3>
-                </div>
-              </div>
-              <p class="club-description">${club.description}</p>
-              <ul class="card-status">
-                <li>
-                  <i class="fa-solid fa-calendar-days"></i>
-                  <p>${club.foundedYear}</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-user"></i>
-                  <p>${club.members}</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <p>${club.activities}</p>
-                </li>
-              </ul>
-            `;
-          return card;
-        }
-
-        Render() {
-          this.data.forEach((club) => {
-            const clubCard = this.createClubCard(club);
-            this.container.appendChild(clubCard);
-          });
-        }
-        async init() {
-          await this.fetchData();
-          this.Render();
-        }
-      }
-      const clubPage = new ClubPage("cards-container-1");
-      clubPage.init();
-    </script>
+    <script src="./assets/js/getClubData.js"></script>
   </body>
 </html>

@@ -1,0 +1,19 @@
+footer{
+    width: 100%;
+    background-color: var(--default-lightgreen);
+    text-align: center;
+    padding: 0.9rem 0;
+    & p{
+        width: 100%;
+        margin: 1rem 0;
+        color: var(--text-gray);
+    }
+    & address{
+        width: 100%;
+        text-decoration: none;
+        & a{
+            color: var(--contact-green);
+            margin: 0.1rem;
+        }
+    }
+}
