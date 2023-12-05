@@ -10,8 +10,38 @@
         "activities": "Элсэлт авч байгаа"
     },
     {
+        "name": "Num chess club",
+        "category": "Спорт",
+        "coverImage": "./assets/images/art_gallery.jpg",
+        "logo": "./assets/images/artemisia_logo.jpg",
+        "description": "Artemisia МУИС-ийн уран зургийн клуб",
+        "foundedYear": "2018 он",
+        "members": "78 гишүүнтэй",
+        "activities": "Элсэлт авч байгаа"
+    },
+    {
         "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
+        "category": "Уран зохиол",
+        "coverImage": "./assets/images/art_gallery.jpg",
+        "logo": "./assets/images/artemisia_logo.jpg",
+        "description": "Artemisia МУИС-ийн уран зургийн клуб",
+        "foundedYear": "2018 он",
+        "members": "78 гишүүнтэй",
+        "activities": "Элсэлт авч байгаа"
+    },
+    {
+        "name": "Artemisia art club",
+        "category": "Уран зохиол",
+        "coverImage": "./assets/images/art_gallery.jpg",
+        "logo": "./assets/images/artemisia_logo.jpg",
+        "description": "Artemisia МУИС-ийн уран зургийн клуб",
+        "foundedYear": "2018 он",
+        "members": "78 гишүүнтэй",
+        "activities": "Элсэлт авч байгаа"
+    },
+    {
+        "name": "Artemisia art club",
+        "category": "Илтгэл мэтгэлзээн",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
@@ -31,7 +61,7 @@
     },
     {
         "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
+        "category": "Технологи",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
@@ -41,37 +71,7 @@
     },
     {
         "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
-        "coverImage": "./assets/images/art_gallery.jpg",
-        "logo": "./assets/images/artemisia_logo.jpg",
-        "description": "Artemisia МУИС-ийн уран зургийн клуб",
-        "foundedYear": "2018 он",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
-    },
-    {
-        "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
-        "coverImage": "./assets/images/art_gallery.jpg",
-        "logo": "./assets/images/artemisia_logo.jpg",
-        "description": "Artemisia МУИС-ийн уран зургийн клуб",
-        "foundedYear": "2018 он",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
-    },
-    {
-        "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
-        "coverImage": "./assets/images/art_gallery.jpg",
-        "logo": "./assets/images/artemisia_logo.jpg",
-        "description": "Artemisia МУИС-ийн уран зургийн клуб",
-        "foundedYear": "2018 он",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
-    },
-    {
-        "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
+        "category": "Технологи",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
