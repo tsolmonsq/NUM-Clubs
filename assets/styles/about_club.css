@@ -211,6 +211,39 @@
         border-radius: 50%;
     } 
 }
+user-comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.comment-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display:inline-block;
+ 
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size:40px;
+    padding: 20px;
+}
+
+.comment-date {
+    color: var(--text-gray2);
+    font-size: 0.75rem;
+    margin-left: auto;
+    font-size: 40px;
+}
+
+.comment-text {
+    margin-top: 5px;
+}
+
 
 @media only screen and (min-width: 48rem) {
     .container{
