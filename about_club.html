@@ -32,6 +32,16 @@
     <link rel="stylesheet" href="./assets/styles/index.css" />
     <link rel="stylesheet" href="./assets/styles/about_club.css" />
     <title>NUM Student Clubs</title>
+    <script src="./assets/components/club-comment.js"></script>
+    <style>
+      club-comment {
+        line-height: 1.4rem;
+        & span {
+          color: var(--text-gray2);
+          font-size: 0.75rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -88,14 +98,18 @@
             <div class="comment-section">
               <h2>Сэтгэгдлүүд <span>3</span></h2>
               <ul>
-                <li class="user-comment">
-                  <span>2023/10/19</span>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </li>
+                <club-comment
+                  txt="bla bla bla"
+                  ognoo="2023/11/30"
+                ></club-comment>
+                <club-comment
+                  txt="bla bla bla"
+                  ognoo="2023/11/30"
+                ></club-comment>
+                <club-comment
+                  txt="bla bla bla"
+                  ognoo="2023/11/30"
+                ></club-comment>
               </ul>
             </div>
             <form class="comment-form">

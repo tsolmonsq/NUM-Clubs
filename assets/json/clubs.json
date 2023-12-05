@@ -1,7 +1,7 @@
 [
     {
         "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
+        "category": "Технологи",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
@@ -51,7 +51,7 @@
     },
     {
         "name": "Artemisia art club",
-        "category": "Дүрслэх урлаг",
+        "category": "Спорт",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
@@ -61,7 +61,7 @@
     },
     {
         "name": "Artemisia art club",
-        "category": "Технологи",
+        "category": "Спорт",
         "coverImage": "./assets/images/art_gallery.jpg",
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "Artemisia МУИС-ийн уран зургийн клуб",
