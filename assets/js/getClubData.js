@@ -38,7 +38,6 @@ document.getElementById("clubs").addEventListener("change", function () {
           club.category.toLowerCase() === this._tagFilter.toLowerCase()
       );
     }
-
     createClubCard(club) {
       const card = document.createElement("article");
       card.classList.add("club-card");

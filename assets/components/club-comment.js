@@ -8,6 +8,31 @@ class ClubComment extends HTMLElement {
             <span>${this.getAttribute('ognoo')}</span>
             <p>${this.getAttribute('txt')}</p>
         </li>`;
+        
+    }
+    
+    connectedCallback() {
+     
+    }
+
+    updateComment(text, date, author, avatar) {
+       
+    }
+    
+   
+    attributeChangedCallback(name, oldVal, newVal) {
+    }
+
+    
+
+    disconnectedCallback() {
+    
+    }
+
+  
+
+    adoptedCallback() {
+    
     }
 }
 
