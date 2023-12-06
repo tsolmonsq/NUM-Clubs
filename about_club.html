@@ -32,21 +32,11 @@
     <link rel="stylesheet" href="./assets/styles/index.css" />
     <link rel="stylesheet" href="./assets/styles/about_club.css" />
     <title>NUM Student Clubs</title>
-    <script src="./assets/components/club-comment.js"></script>
-    <style>
-      club-comment {
-        line-height: 1.4rem;
-        & span {
-          color: var(--text-gray2);
-          font-size: 0.75rem;
-        }
-      }
-    </style>
+    <script src="./assets/components/club-comment.js" defer></script>
   </head>
   <body>
     <header>
       <img src="assets/images/logo.png" alt="NUM Clubs logo" />
-      <h3>Tsoomoo</h3>
       <button id="login">Нэвтрэх</button>
     </header>
     <main>
@@ -99,16 +89,20 @@
               <h2>Сэтгэгдлүүд <span>3</span></h2>
               <ul>
                 <club-comment
-                  txt="bla bla bla"
-                  ognoo="2023/11/30"
+                  ognoo="2023/12/31"
+                  txt="Ih goy club baina"
                 ></club-comment>
                 <club-comment
-                  txt="bla bla bla"
-                  ognoo="2023/11/30"
+                  ognoo="2023/12/06"
+                  txt="Amjilt manaihaan"
                 ></club-comment>
                 <club-comment
-                  txt="bla bla bla"
-                  ognoo="2023/11/30"
+                  ognoo="2023/12/06"
+                  txt="Mundag shuu"
+                ></club-comment>
+                <club-comment
+                  ognoo="2023/12/06"
+                  txt="Clubiin elselt hezee ve"
                 ></club-comment>
               </ul>
             </div>

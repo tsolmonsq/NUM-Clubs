@@ -1,30 +1,14 @@
 class ClubComment extends HTMLElement {
     constructor(){
-        super()
-        this.text = this.getAttribute("txt") ?? "text";
-        this.date = this.getAttribute("ognoo") ?? "2023/11/29";
-    }
-
-    connectedCallback() {
-        this.innerHTML = 
-        `<li class="user-comment">
-            <span>${this.date}</span>
-            <p>${this.text}</p>
+        super();
+        this.attachShadow({mode: 'open'});
+        this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="./assets/styles/about_club.css"/>
+        <li class="user-comment">
+            <span>${this.getAttribute('ognoo')}</span>
+            <p>${this.getAttribute('txt')}</p>
         </li>`;
     }
-
-    disconnectedCallback() {
-    
-    }
-
-    attributeChangedCallback(name, oldVal, newVal) {
-    
-    }
-
-    adoptedCallback() {
-    
-    }
-
 }
 
-window.customElements.define('club-comment', ClubComment);
+window.customElements.define("club-comment", ClubComment);

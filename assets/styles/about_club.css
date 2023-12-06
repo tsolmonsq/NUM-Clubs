@@ -110,22 +110,22 @@
         color: var(--text-gray);
         margin-left: 1rem;
     }
-    & .user-comment{
-        line-height: 1.4rem;
-        & span{
-            color: var(--text-gray2);
-            font-size: 0.75rem;
-        }
-    }
     & p{
         line-height: normal;
         font-size: 1rem;
         color: var(--text-gray);
     }
     & ul{
-
         list-style-type: none;
         margin: 1rem;
+    }
+}
+.user-comment{
+    margin: 0.6rem 1rem;
+    line-height: 1.4rem;
+    & span{
+        color: var(--text-gray2);
+        font-size: 0.75rem;
     }
 }
 
