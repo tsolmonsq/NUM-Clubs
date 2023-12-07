@@ -33,11 +33,37 @@
     <link rel="stylesheet" href="./assets/styles/about_club.css" />
     <title>NUM Student Clubs</title>
     <script src="./assets/components/club-comment.js" defer></script>
+    <script type="module" src="./assets/modules/header.js"></script>
   </head>
   <body>
-    <header>
-      <img src="assets/images/logo.png" alt="NUM Clubs logo" />
-      <button id="login">Нэвтрэх</button>
+    <header class="header">
+      <nav class="navbar-container">
+        <a href="./index.html">
+          <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+        </a>
+        <ul class="navbar-items">
+          <li>
+            <a href="./clubs.html">Клубүүд</a>
+          </li>
+          <li>
+            <a href="./events.html">Эвентүүд</a>
+          </li>
+          <li>
+            <a href="./liked_clubs.html" id="liked">
+              <i class="fa-regular fa-heart"></i>
+              <span>0</span>
+            </a>
+          </li>
+          <li>
+            <a href="./login.html">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
     </header>
     <main>
       <section class="about-club">
@@ -85,27 +111,10 @@
                 <span>40</span>
               </article>
             </div>
-            <div class="comment-section">
-              <h2>Сэтгэгдлүүд <span>3</span></h2>
-              <ul>
-                <club-comment
-                  ognoo="2023/12/31"
-                  txt="Ih goy club baina"
-                ></club-comment>
-                <club-comment
-                  ognoo="2023/12/06"
-                  txt="Amjilt manaihaan"
-                ></club-comment>
-                <club-comment
-                  ognoo="2023/12/06"
-                  txt="Mundag shuu"
-                ></club-comment>
-                <club-comment
-                  ognoo="2023/12/06"
-                  txt="Clubiin elselt hezee ve"
-                ></club-comment>
-              </ul>
-            </div>
+            <section class="comment-section">
+              <h2>Сэтгэгдлүүд <span id="comment-counter">0</span></h2>
+              <!-- Comments -->
+            </section>
             <form class="comment-form">
               <label for="comment">Сэтгэгдэл бичих</label>
               <input
@@ -114,7 +123,7 @@
                 id="comment"
                 placeholder="Таны сэтгэгдэл"
               />
-              <input type="submit" value="Бичих" />
+              <input type="button" onclick="oncomment()" value="Бичих" />
             </form>
           </div>
           <div class="right">
@@ -168,5 +177,19 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
+    <script>
+      let count = 0;
+      function oncomment() {
+        document.querySelector(".comment-section").insertAdjacentHTML(
+          "beforeend",
+          `<club-comment
+                  ognoo="2023/12/06"
+                  txt="${document.getElementById("comment").value}">
+          </club-comment>`
+        );
+        count++;
+        document.getElementById("comment-counter").innerHTML = count;
+      }
+    </script>
   </body>
 </html>
