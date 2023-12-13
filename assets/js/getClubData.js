@@ -1,10 +1,12 @@
-document.getElementById("clubs").addEventListener("change", function () {
+document.getElementById("clubs-selection").addEventListener("change", function () {
+    
     const selectedValue = this.value;
     if (selectedValue !== "") {
       window.location.href = `./clubs.html?category=${selectedValue}`;
-    } else {
+    } 
+    else 
       window.location.href = `./clubs.html`;
-    }
+
   });
 
   class ClubPage {
@@ -86,8 +88,11 @@ document.getElementById("clubs").addEventListener("change", function () {
     async init() {
       await this.fetchData();
       this.render();
+      
     }
   }
 
   const clubPage = new ClubPage("cards-container-1");
   clubPage.init();
+
+  
