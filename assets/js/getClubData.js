@@ -85,3 +85,5 @@ document.getElementById("clubs-selection").addEventListener("change", function (
   clubPage.init();
 
   
+
+  

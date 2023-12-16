@@ -11,4 +11,5 @@ class ClubComment extends HTMLElement {
     }
 }
 
+
 window.customElements.define("club-comment", ClubComment);
