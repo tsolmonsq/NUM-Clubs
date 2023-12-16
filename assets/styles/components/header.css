@@ -30,13 +30,6 @@ header{
                 color: var(--primary-orange);
             }
         }
-        & #liked{
-            color: var(--primary-orange);
-            transition: 0.7s ease;
-            &:hover{
-                color: var(--text-gray);
-            }
-        }
         &.active{
             left: 0;
         }
@@ -44,6 +37,7 @@ header{
     & .nav-icon{
         display: none;
     }  
+    
 
     @media (max-width: 48rem){
         height: 4rem;

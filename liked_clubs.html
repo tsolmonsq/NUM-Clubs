@@ -3,9 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/styles/liked-clubs.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Liked Clubs</h1>
+    <header class="header">
+      <nav class="navbar-container">
+        <a href="./index.html">
+          <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+        </a>
+        <ul class="navbar-items">
+          <li>
+            <a href="./clubs.html">Клубүүд</a>
+          </li>
+          <li>
+            <a href="./events.html">Эвентүүд</a>
+          </li>
+          <li>
+            <a href="./liked_clubs.html" id="liked">
+              <i class="fa-regular fa-heart"></i>
+              <span>0</span>
+            </a>
+          </li>
+          <li>
+            <a href="./login.html">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <section class="liked-clubs">
+        <h2>Таалагдсан клубууд</h2>
+        <div class="cards-container" id="cards-container-1"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">Developed by <b>Num Clubs team</b></p>
+      <address class="footer__contact">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-regular fa-envelope"></i></a>
+      </address>
+    </footer>
   </body>
 </html>

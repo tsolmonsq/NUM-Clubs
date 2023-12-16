@@ -1,22 +1,24 @@
 
 .club-card{ 
-    height: 18rem;
+    height: 24rem;
     margin: 5%;
     width: 90%;
     background-color: var(--default-white);
     box-shadow: var(--bs-default);
     border-radius: 2rem;
     transition: all 0.4s ease;
+    position: relative;
     cursor: pointer;
-
     & .cover{
         width: 100%;
         height: 30%;
         object-fit: cover;
         border-radius: 2rem 2rem 0 0;
+        
     }
     & .club-logo{
         width: 7rem;
+        height: 7rem;
         border-radius: 50%;
         margin-top: -3.5rem;
         margin-left: 5%;
@@ -26,13 +28,10 @@
         display: flex;
         & .card-head-txt{
             margin-top: -1rem;
-            margin-left: 2rem;
+            margin-left: 0.5rem;
             & h3 {
                 margin-top: 1rem;
-                width: 10rem;
-                &:hover {
-                    color: var(--hover-gray);
-                }
+                width: 12rem;
             }
         }
     }
@@ -45,13 +44,13 @@
         font-size: 0.8rem;
     }
     & .card-status{ 
-        position: static;
+        position: absolute;
+        bottom: 27px;
         display: flex;
         width: 90%;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        margin-top: 4rem;
-        margin-left: 5%;
+        margin-top: auto;
         margin-right: 8%;
         font-size: 0.8rem;
         color: #777777;
@@ -64,13 +63,36 @@
     & .club-description{
         max-height: 3rem;
         margin-left: 5%;
-        margin-top: 1.2rem;
-        &:hover{
-            color: var(--hover-gray);
+        margin-right: 3%;
+        margin-top: 2rem;
+    }
+    
+
+    & .heart-checkbox{
+        position: absolute;
+        top: 8.6rem;
+        right: 15px;
+        display: inline-block;
+        & input{
+            display: none;
         }
+        & label {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #eba681;
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            &:hover{
+                color: #ff4957;
+            }
+        }
+        & input:checked + label {
+            color: #ff4957;
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+    
     }
     &:hover{
-        transform: translateY(-15px);
+        transform: translateY(-5px);
         cursor: pointer;
     }
 }

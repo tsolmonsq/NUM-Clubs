@@ -32,7 +32,11 @@
     <link rel="stylesheet" href="./assets/styles/clubs.css" />
     <title>NUM Student Clubs</title>
     <script type="module" src="./assets/modules/header.js"></script>
+    <script src="./assets/components/club-card.js"></script>
+    <script src="./assets/components/club-cart.js"></script>
+    <script src="./assets/components/club-like-btn.js"></script>
   </head>
+
   <body>
     <header class="header">
       <nav class="navbar-container">
@@ -47,9 +51,8 @@
             <a href="./events.html">Эвентүүд</a>
           </li>
           <li>
-            <a href="./liked_clubs.html" id="liked">
-              <i class="fa-regular fa-heart"></i>
-              <span>0</span>
+            <a href="./liked_clubs.html">
+              <club-cart></club-cart>
             </a>
           </li>
           <li>
@@ -81,10 +84,13 @@
               <option value="Спорт">Спорт</option>
               <option value="Илтгэл мэтгэлцээн">Илтгэл мэтгэлцээн</option>
               <option value="Технологи">Технологи</option>
+              <option value="Сайн дурын">Сайн дурын</option>
             </select>
           </form>
         </div>
-        <div class="cards-container" id="cards-container-1"></div>
+        <div class="cards-container" id="cards-container-1">
+          <!-- Card Template -->
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -95,6 +101,6 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
-    <script src="./assets/js/getClubData.js" defer></script>
+    <script type="module" src="./assets/js/getClubData.js" defer></script>
   </body>
 </html>
