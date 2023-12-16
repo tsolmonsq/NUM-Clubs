@@ -34,11 +34,10 @@
     <title>NUM Student Clubs</title>
     <script src="./assets/components/club-comment.js" defer></script>
     <script type="module" src="./assets/modules/header.js"></script>
+    <script src="./assets/components/club-cart.js"></script>
   </head>
   <body>
     <header class="header">
-      
-
       <nav class="navbar-container">
         <a href="./index.html">
           <img src="assets/images/logo.png" alt="NUM Clubs logo" />
@@ -51,9 +50,8 @@
             <a href="./events.html">Эвентүүд</a>
           </li>
           <li>
-            <a href="./liked_clubs.html" id="liked">
-              <i class="fa-regular fa-heart"></i>
-              <span>0</span>
+            <a href="./liked_clubs.html">
+              <club-cart></club-cart>
             </a>
           </li>
           <li>
@@ -196,12 +194,11 @@
       }
 
       // Function to toggle dark mode
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-}
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
 
-// Example usage: Call this function when a 'dark mode' toggle button is clicked
-
+      // Example usage: Call this function when a 'dark mode' toggle button is clicked
     </script>
   </body>
 </html>
