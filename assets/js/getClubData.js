@@ -1,3 +1,11 @@
+
+
+
+import ClubCard from './../components/club-card.js'
+
+
+
+
 document.getElementById("clubs-selection").addEventListener("change", function () {
     
     const selectedValue = this.value;
@@ -41,36 +49,22 @@ document.getElementById("clubs-selection").addEventListener("change", function (
       );
     }
     createClubCard(club) {
-      const card = document.createElement("article");
-      card.classList.add("club-card");
-
+      const card = document.createElement('div');
       card.innerHTML = `
-          <img class="cover" src="${club.coverImage}" alt="${club.name}_cover" />
-          <div class="card-head">
-            <img class="club-logo" src="${club.logo}" alt="${club.name}_logo" />
-            <div class="card-head-txt">
-              <span class="club-tag">${club.category}</span>
-              <h3>${club.name}</h3>
-            </div>
-          </div>
-          <p class="club-description">${club.description}</p>
-          <ul class="card-status">
-            <li>
-              <i class="fa-solid fa-calendar-days"></i>
-              <p>${club.foundedYear}</p>
-            </li>
-            <li>
-              <i class="fa-regular fa-user"></i>
-              <p>${club.members}</p>
-            </li>
-            <li>
-              <i class="fa-regular fa-pen-to-square"></i>
-              <p>${club.activities}</p>
-            </li>
-          </ul>
-        `;
+          <club-card
+              coverImage="${club.coverImage}" 
+              logo="${club.logo}"
+              c-tag="${club.category}"
+              name="${club.name}"
+              desc="${club.description}"
+              f-year="${club.foundedYear}"
+              members="${club.members}"
+              act-status="${club.activities}"
+          ></club-card>
+      `;
       return card;
-    }
+  }
+  
 
     render() {
       this.container.innerHTML = "";
@@ -88,11 +82,28 @@ document.getElementById("clubs-selection").addEventListener("change", function (
     async init() {
       await this.fetchData();
       this.render();
+
+      this.setDropdownValue();
       
     }
+
+    setDropdownValue() {
+      const categoryParam = this.getUrlParam("category");
+      if (categoryParam) {
+        const dropdown = document.getElementById("clubs-selection");
+        dropdown.value = categoryParam;
+      }
+    }
+
+
   }
 
   const clubPage = new ClubPage("cards-container-1");
   clubPage.init();
+
+  // window.onload = function() {
+  //   const clubPage = new ClubPage("cards-container-1");
+  //   clubPage.init();
+  // };
 
   

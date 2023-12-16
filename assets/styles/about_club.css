@@ -250,3 +250,42 @@ user-comment {
         display: flex;
     }
 }
+
+
+:root {
+    /* Light theme colors */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --default-white: #ffffff;
+    --border-gray: #cccccc;
+    /* --primary-green: #4CAF50; */
+    --text-gray: #333333;
+    --text-yellow: #FFD700;
+    --primary-orange: #FF5722;
+    /* --contact-green: #008000; */
+    --text-gray2: #666666;
+  }
+  /* Dark Theme */
+.dark-mode {
+    --background-color: #121212; 
+    --text-color: #E0E0E0;       
+    --default-white: #242424;    
+    --border-gray: #444444;      
+    --primary-green: #4CAF50;    
+    --text-gray: #E0E0E0;        
+    --text-yellow: #FFD700;      
+    --primary-orange: #FF5722;   
+    --contact-green: #00C853;    
+    --text-gray2: #BBBBBB; 
+}
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+  
+  /* Apply custom properties in CSS */
+  .user-comment {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  

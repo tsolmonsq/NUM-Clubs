@@ -37,6 +37,8 @@
   </head>
   <body>
     <header class="header">
+      
+
       <nav class="navbar-container">
         <a href="./index.html">
           <img src="assets/images/logo.png" alt="NUM Clubs logo" />
@@ -64,6 +66,8 @@
           <i class="fa fa-bars"></i>
         </a>
       </nav>
+
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header>
     <main>
       <section class="about-club">
@@ -190,6 +194,14 @@
         count++;
         document.getElementById("comment-counter").innerHTML = count;
       }
+
+      // Function to toggle dark mode
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+// Example usage: Call this function when a 'dark mode' toggle button is clicked
+
     </script>
   </body>
 </html>
