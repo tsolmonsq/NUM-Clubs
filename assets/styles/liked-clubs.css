@@ -1,0 +1,20 @@
+@import url("./main.css");
+@import url("./components/header.css");
+@import url("./components/footer.css");
+@import url("./components/club_card.css");
+
+.liked-clubs{
+    max-width: 100%;
+    & h2{
+        padding-bottom: 0.6rem;
+        margin: 0;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        width: 320px;
+        text-align: center;
+        max-width: 90rem;
+        border-bottom: solid 1px var(--primary-orange);
+        color: var(--text-gray);
+    }
+}
