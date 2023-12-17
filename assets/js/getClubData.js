@@ -8,6 +8,15 @@ document.getElementById("clubs-selection").addEventListener("change", function (
     else 
       window.location.href = `./clubs.html`;
 
+});
+
+  const searchInput = document.getElementById("site-search");
+  const searchBtn = document.getElementById("search-btn");
+
+  searchBtn.addEventListener("click", () => {
+    const searchVal = searchInput.value.trim().toLowerCase();
+    clubPage._list = clubPage.searchByName(searchVal);
+    clubPage.render();
   });
 
   class ClubPage {
@@ -15,6 +24,7 @@ document.getElementById("clubs-selection").addEventListener("change", function (
       this.container = document.getElementById(containerId);
       this.data = [];
       this._tagFilter = this.getUrlParam("category");
+      this._nameFilter = this.getUrlParam("name");
     }
 
     async fetchData() {
@@ -31,6 +41,16 @@ document.getElementById("clubs-selection").addEventListener("change", function (
       }
     }
 
+    searchByName(searchTerm) {
+      if (!searchTerm) {
+        return this.filterByTag(this.data);
+      }
+    
+      return this.filterByTag(this.data).filter(
+        (club) => club.name.toLowerCase().includes(searchTerm)
+      );
+    }
+
     filterByTag(clubData) {
       if (!this._tagFilter || this._tagFilter === "Бүгд") {
         return clubData;
@@ -41,6 +61,7 @@ document.getElementById("clubs-selection").addEventListener("change", function (
           club.category.toLowerCase() === this._tagFilter.toLowerCase()
       );
     }
+    
     
     createClubCard(club) {
       const clubCard = document.createElement("club-card");
@@ -56,12 +77,12 @@ document.getElementById("clubs-selection").addEventListener("change", function (
 
     render() {
       this.container.innerHTML = "";
-      this._list.forEach((club) => {
+      this._list.map((club) => {
         const clubCard = this.createClubCard(club);
         this.container.appendChild(clubCard);
       });
     }
-
+    
     getUrlParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);

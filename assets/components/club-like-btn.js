@@ -7,7 +7,7 @@ class ClubLikeBtn extends HTMLElement {
     #Render(){
         this.innerHTML = `
         <div class="heart-checkbox" id="heart-button">
-          <input type="checkbox" id="heart" />
+          <input type="checkbox" id="heart"/>
           <label for="heart"><i class="fa-solid fa-heart"></i></label>
         </div>
         `;
@@ -21,12 +21,16 @@ class ClubLikeBtn extends HTMLElement {
                 true
             )
         }
+
     }
+
     clickHandler(e){
         if(e.target.tagName.toLowerCase() == "input"){
             let evntName = "club-like-btn-disliked";
-            if(e.target.checked)
+            if(e.target.checked){
                 evntName = "club-like-btn-liked";
+            }
+
             const evnt = new Event(evntName, 
                 {
                     bubbles: true,
@@ -41,9 +45,13 @@ class ClubLikeBtn extends HTMLElement {
     disconnectedCallback() {
         //implementation
     }
-
+    static get observedAttributes() {
+        return ["checked"];
+    }
+    
     attributeChangedCallback(name, oldVal, newVal) {
         //implementation
+        
     }
 
     adoptedCallback() {

@@ -6,8 +6,7 @@
         "logo": "./assets/images/artemisia_logo.jpg",
         "description": "МУИС-ийн уран зурагт хайртай оюутан залуусын нэгдсэн клуб.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "NumCord",
@@ -16,8 +15,7 @@
         "logo": "./assets/images/numcord_logo.jpg",
         "description": "МУИС-ийн цор ганц 1200+ гишүүнтэй дискорд сервер.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "Hackum Students Club",
@@ -26,8 +24,7 @@
         "logo": "./assets/images/hackum_logo.png",
         "description": "Мэдээллийн технологийн чиглэлээр үйл ажиллагаа явуулдаг оюутны клуб.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "Num Uncage",
@@ -36,8 +33,7 @@
         "logo": "./assets/images/num_uncage_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "Thanks Student club of NUM",
@@ -46,8 +42,7 @@
         "logo": "./assets/images/thanks_students_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "Talented Students",
@@ -56,8 +51,7 @@
         "logo": "./assets/images/talented_students_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "МУИС-ХШУИС-Оюутны Зөвлөл",
@@ -66,8 +60,7 @@
         "logo": "./assets/images/hshuis_oz_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     {
         "name": "GDSC NUM",
@@ -76,8 +69,7 @@
         "logo": "./assets/images/gdsc_num_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     },
     
     {
@@ -87,7 +79,6 @@
         "logo": "./assets/images/ulaan_zagalmai_logo.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "foundedYear": "2018 онд байгуулагдсан",
-        "members": "78 гишүүнтэй",
-        "activities": "Элсэлт авч байгаа"
+        "members": "78 гишүүнтэй"
     }
 ]

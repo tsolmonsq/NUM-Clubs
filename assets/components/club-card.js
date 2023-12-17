@@ -12,7 +12,9 @@ template.innerHTML = `
       
       <article class="club-card">
         <img class="cover"/>
+
         <club-like-btn></club-like-btn>
+
         <div class="card-head">
           <img class="club-logo" />
           <div class="card-head-txt">
@@ -45,24 +47,31 @@ class ClubCard extends HTMLElement {
     }
     #likeBtnClicked(val){
       console.log("club-like-btn event recieved!");
+        let club = {
+          name: this.getAttribute("name"),
+          category: this.getAttribute("category"),
+          coverImage: this.getAttribute("cover"),
+          logo: this.getAttribute("logo"),
+          description: this.getAttribute("desc"),
+          foundedYear: this.getAttribute("fyear"),
+          members: this.getAttribute("members")
+        };
         const evnt = new CustomEvent('club-like-clicked', {
           composed: true,
           detail: {
             name: this.name,
-            isLiked: val
+            isLiked: val,
+            theClub: club
           }
         });
-      
-      
       window.dispatchEvent(evnt);
+
+      if(!val)
+        this.shadowRoot.querySelector("club-like-btn").removeAttribute("checked");
     }
 
     connectedCallback(){
-      this.shadowRoot.getElementById("heart-button").addEventListener("click", () => {
-        console.log("Added to Cart");
-        const cart = document.querySelector("club-cart");
-        cart.AddToCart(this);
-      });
+      
     }
     
     static get observedAttributes() {

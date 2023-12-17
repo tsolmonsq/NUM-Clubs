@@ -1,8 +1,10 @@
 class ClubCart extends HTMLElement {
     constructor() {
         super();
+        this.clubs = [];
         this.attachShadow({mode: 'open'});
         this.#Render();
+        this.readFromLocalStorage();
     }
     #Render(){
         this.shadowRoot.innerHTML = `
@@ -32,13 +34,33 @@ class ClubCart extends HTMLElement {
         //implementation
         window.addEventListener("club-like-clicked", 
         (e) => {
-            const counter  = this.shadowRoot.querySelector("#counter");
+
             if(e.detail.isLiked){
-                counter.innerText = parseInt(counter.innerText, 10) + 1;
-            }                            
-            else
-            counter.innerText = parseInt(counter.innerText, 10) - 1;
+                this.AddToCart(e.detail.club)  
+            }
+            else{
+                this.RemoveFromCart(e.detail.club);       
+            }
         });
+    }
+    readFromLocalStorage(){
+        const counter = this.shadowRoot.querySelector("#counter");
+        const storedValue = localStorage.getItem("cart-total");
+        if (storedValue !== null) {
+            counter.innerText = storedValue;
+        }
+    }
+    AddToCart(club){
+        this.clubs.push(club);
+        const counter  = this.shadowRoot.querySelector("#counter");
+        counter.innerText = parseInt(counter.innerText, 10) + 1;   
+        localStorage.setItem("cart-total", counter.innerText);
+    }
+    RemoveFromCart(club){
+        this.clubs.pop(club);
+        const counter  = this.shadowRoot.querySelector("#counter");
+        counter.innerText = parseInt(counter.innerText, 10) - 1;   
+        localStorage.setItem("cart-total", counter.innerText);
     }
 
     disconnectedCallback() {
