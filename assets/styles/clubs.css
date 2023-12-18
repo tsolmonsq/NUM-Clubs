@@ -13,7 +13,7 @@
         margin-top: 2rem;
         margin-bottom: 0;
         max-width: 90rem;
-        color: var(--text-gray);
+        color: var(--text-color);
     }
     & .club-filter{
         margin: 0 auto;
@@ -41,7 +41,7 @@
                 width: 15rem;
                 border: none;
                 box-shadow: var(--bs-orange);
-                color: var(--text-gray);
+                color: var(--bg-color);
             }
         }
         

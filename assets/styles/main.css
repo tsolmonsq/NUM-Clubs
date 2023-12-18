@@ -7,8 +7,8 @@ html{
     --primary-orange: #E55604;
     --primary-green: #0BB5B5;
     --default-white: #FFFFFF;
-    --default-pink: #FDF6F5;
-    --default-pink2: #ECE8E8;
+    --header-bg-clr: #FDF6F5;
+    --bg-color: #ECE8E8;
     --default-lightgreen: #F6FFFE;
     --text-gray: #3D3838;
     --text-gray2: #4A4A4A;
@@ -27,8 +27,23 @@ html{
     font-family: 'M PLUS 1', sans-serif;
     font-family: 'Varela Round', sans-serif;
 
-    background-color: var(--default-pink2);
+    background-color: var(--bg-color);
 
+}
+.dark-mode {
+    --bg-color: #121212; 
+    --text-color: #E0E0E0;       
+    --default-white: #242424;    
+    --border-gray: #444444;      
+    --primary-green: #0BB5B5;    
+    --text-gray: #E0E0E0;        
+    --text-yellow: #FFD700;      
+    --primary-orange: #FF5722;   
+    --contact-green: #0BB5B5;    
+    --text-gray2: #BBBBBB; 
+    --header-bg-clr: #242424;
+    --default-lightgreen: #242424;
+    background-color: var(--bg-color);
 }
 
 body{
@@ -37,4 +52,49 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
+}
+
+.toggle-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #3D3838;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        & i {
+            font-size: 2rem;
+            margin: 0 5px;
+        }
+    }
+    & input:checked + .toggle .fas.fa-moon {
+        display: none;
+    }
+      
+    & input:checked + .toggle .fas.fa-sun {
+        display: inline;
+        color: var(--text-yellow);
+        
+    }
+      
+    & input:not(:checked) + .toggle .fas.fa-sun {
+        display: none;
+    }
+      
+    & input:not(:checked) + .toggle .fas.fa-moon {
+        display: inline;
+        color: var(--default-white);
+    }
+      
+    & input {
+        display: none;
+    }
 }

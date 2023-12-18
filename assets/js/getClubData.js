@@ -10,14 +10,16 @@ document.getElementById("clubs-selection").addEventListener("change", function (
 
 });
 
-  const searchInput = document.getElementById("site-search");
-  const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("site-search");
+const searchBtn = document.getElementById("search-btn");
 
-  searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click", () => {
     const searchVal = searchInput.value.trim().toLowerCase();
     clubPage._list = clubPage.searchByName(searchVal);
     clubPage.render();
-  });
+});
+
+
 
   class ClubPage {
     constructor(containerId) {
@@ -33,6 +35,7 @@ document.getElementById("clubs-selection").addEventListener("change", function (
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        
         this.data = await response.json();
         this._list = this.filterByTag(this.data);
         this.render();

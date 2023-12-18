@@ -51,6 +51,8 @@ class ClubLikeBtn extends HTMLElement {
     
     attributeChangedCallback(name, oldVal, newVal) {
         //implementation
+        if(name === "checked")
+            this.querySelector("#heart").checked = newVal != null;
         
     }
 

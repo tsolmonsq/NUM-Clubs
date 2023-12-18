@@ -56,6 +56,8 @@ class ClubCard extends HTMLElement {
           foundedYear: this.getAttribute("fyear"),
           members: this.getAttribute("members")
         };
+        localStorage.setItem(this.getAttribute("name"), val);
+
         const evnt = new CustomEvent('club-like-clicked', {
           composed: true,
           detail: {
@@ -71,7 +73,10 @@ class ClubCard extends HTMLElement {
     }
 
     connectedCallback(){
-      
+      let likedState = localStorage.getItem(this.getAttribute("name"));
+      if(likedState === "true"){
+        this.shadowRoot.querySelector("club-like-btn").setAttribute("checked", true);
+      }
     }
     
     static get observedAttributes() {
@@ -104,4 +109,5 @@ class ClubCard extends HTMLElement {
       }
   }
 }
+
 window.customElements.define('club-card', ClubCard);

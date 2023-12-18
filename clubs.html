@@ -93,6 +93,20 @@
         </div>
       </section>
     </main>
+    <div class="toggle-container">
+      <input type="checkbox" id="mode-toggle" />
+      <label for="mode-toggle" class="toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </label>
+    </div>
+    <div class="toggle-container">
+      <input type="checkbox" id="mode-toggle" />
+      <label for="mode-toggle" class="toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </label>
+    </div>
     <footer class="footer">
       <p class="footer__text">Developed by <b>Num Clubs team</b></p>
       <address class="footer__contact">
@@ -102,5 +116,10 @@
       </address>
     </footer>
     <script type="module" src="./assets/js/getClubData.js" defer></script>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
   </body>
 </html>
