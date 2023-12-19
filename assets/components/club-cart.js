@@ -36,10 +36,10 @@ class ClubCart extends HTMLElement {
         (e) => {
 
             if(e.detail.isLiked){
-                this.AddToCart(e.detail.club)  
+                this.AddToCart(e.detail.theClub)  
             }
             else{
-                this.RemoveFromCart(e.detail.club);       
+                this.RemoveFromCart(e.detail.theClub);       
             }
         });
     }
@@ -55,12 +55,19 @@ class ClubCart extends HTMLElement {
         const counter  = this.shadowRoot.querySelector("#counter");
         counter.innerText = parseInt(counter.innerText, 10) + 1;   
         localStorage.setItem("cart-total", counter.innerText);
+        localStorage.setItem("cart-data", JSON.stringify(this.clubs));
     }
-    RemoveFromCart(club){
-        this.clubs.pop(club);
-        const counter  = this.shadowRoot.querySelector("#counter");
-        counter.innerText = parseInt(counter.innerText, 10) - 1;   
-        localStorage.setItem("cart-total", counter.innerText);
+    RemoveFromCart(club) {
+        const clubIndex = this.clubs.findIndex(c => c.name === club.name); 
+        if (clubIndex !== -1) {
+          this.clubs.splice(clubIndex, 1);
+      
+          const counter = this.shadowRoot.querySelector("#counter");
+          counter.innerText = parseInt(counter.innerText, 10) - 1;
+      
+          localStorage.setItem("cart-total", counter.innerText);
+          localStorage.setItem("cart-data", JSON.stringify(this.clubs));
+        }
     }
 
     disconnectedCallback() {

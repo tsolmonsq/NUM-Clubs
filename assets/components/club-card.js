@@ -47,7 +47,8 @@ class ClubCard extends HTMLElement {
     }
     #likeBtnClicked(val){
       console.log("club-like-btn event recieved!");
-        let club = {
+
+        let clubData = {
           name: this.getAttribute("name"),
           category: this.getAttribute("category"),
           coverImage: this.getAttribute("cover"),
@@ -56,6 +57,7 @@ class ClubCard extends HTMLElement {
           foundedYear: this.getAttribute("fyear"),
           members: this.getAttribute("members")
         };
+
         localStorage.setItem(this.getAttribute("name"), val);
 
         const evnt = new CustomEvent('club-like-clicked', {
@@ -63,7 +65,7 @@ class ClubCard extends HTMLElement {
           detail: {
             name: this.name,
             isLiked: val,
-            theClub: club
+            theClub: clubData
           }
         });
       window.dispatchEvent(evnt);

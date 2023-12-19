@@ -10,8 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/styles/liked-clubs.css" />
+    <link rel="stylesheet" href="./assets/styles/clubs.css" />
     <script src="./assets/components/club-cart.js"></script>
+    <script src="./assets/components/club-card.js"></script>
+    <script src="./assets/components/clubs-liked.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -44,9 +46,9 @@
       </nav>
     </header>
     <main>
-      <section class="liked-clubs">
+      <section class="clubs">
         <h2>Таалагдсан клубууд</h2>
-        <div class="cards-container" id="cards-container-1"></div>
+        <clubs-liked></clubs-liked>
       </section>
     </main>
     <footer class="footer">
@@ -57,5 +59,9 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
+    <script>
+      const likedClubs = new LikedClubs("cards-container-1");
+      likedClubs.init();
+    </script>
   </body>
 </html>
