@@ -4,46 +4,67 @@
 }
 
 html{
-    --primary-orange: #E55604;
+    --primary-orange: #E55604;  
     --primary-green: #0BB5B5;
-    --default-white: #FFFFFF;
-    --header-bg-clr: #FDF6F5;
-    --bg-color: #ECE8E8;
-    --default-lightgreen: #F6FFFE;
-    --text-gray: #3D3838;
-    --text-gray2: #4A4A4A;
-    --text-yellow: #FBD13C;
-    --contact-green: #69B0B0;
-    --border-gray: #D0D0D0;
-    --bs-default: 0 5px 10px rgba(0, 0, 0, 0.25);
-    --bs-default-hover: 0 10px 20px rgba(0, 0, 0, 0.25);
-    --bs-orange: 0 1px 3px var(--primary-orange);
-    --line-gray: #d6d6d6;
+    
+    --secondary-green: #69B0B0; //used contact info  --contact-green
 
-    --hover-gray: #797979;
+    --bg-color-1: #ECE8E8; //pink background --bg-color
+    --bg-color-2: #FFFFFF; //white background --default-white
+    --bg-color-3: #FDF6F5; //pink, mostly used header --header-bg-clr
+    --bg-color-4: #F6FFFE; //lightgreen background  --default-lightgreen
 
-    --bg-gradient: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%);
+    --bg-gradient: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%); //gradient background 
+    
+    --text-color-1: #3D3838; //main text color  --text-gray
+    --text-color-2: #4A4A4A; //for gray text  --text-gray2
+    --text-color-3: #FBD13C; // --text-yellow
+    --text-color-4: #777777; // card status text gray color
+
+    --border-color: #D0D0D0; //main gray border  --border-color
+
+    --bs-color1: 0 5px 10px rgba(0, 0, 0, 0.25); //main gray box shadow  --bs-default
+    --bs-hover-color: 0 10px 20px rgba(0, 0, 0, 0.25);  // --bs-default-hover
+    --bs-color-2: 0 1px 3px var(--primary-orange); //orange box shadow  --bs-orange
+
+    --like-yellow: #eba681; // when like button not checked
+    --like-red: #ff4957; // when checked like button
+
+    --line-color: #d6d6d6; // --line-gray
+
+    --hover-gray: #797979; 
+
+    --th-toggle-color: #3D3838;
 
     font-family: 'M PLUS 1', sans-serif;
     font-family: 'Varela Round', sans-serif;
 
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-1);
 
 }
-.dark-mode {
-    --bg-color: #121212; 
-    --text-color: #E0E0E0;       
-    --default-white: #242424;    
-    --border-gray: #444444;      
-    --primary-green: #0BB5B5;    
-    --text-gray: #E0E0E0;        
-    --text-yellow: #FFD700;      
-    --primary-orange: #FF5722;   
-    --contact-green: #0BB5B5;    
-    --text-gray2: #BBBBBB; 
-    --header-bg-clr: #242424;
-    --default-lightgreen: #242424;
-    background-color: var(--bg-color);
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --primary-orange: #E55604;
+        --primary-green: #0BB5B5;
+        --secondary-green: #69B0B0;
+
+        --bg-color-1: #121212; //black 1 background
+        --bg-color-2: #242424; //black 2 background
+        --bg-color-3: #242424; //header
+        --bg-color-4: #242424; //footer
+        
+        --text-color-1: #E0E0E0; //main text color
+
+        --text-color-3: #FBD13C;
+        --text-color-4: #d4d4d4;
+
+        --border-color: #444444; //main border
+
+        --th-toggle-color: #3D3838;
+
+        background-color: var(--bg-color);
+    }
 }
 
 body{
@@ -61,7 +82,7 @@ body{
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background-color: #3D3838;
+    background-color: var(--th-toggle-color);
 
     display: flex;
     align-items: center;
@@ -91,9 +112,9 @@ body{
       
     & input:not(:checked) + .toggle .fas.fa-moon {
         display: inline;
-        color: var(--default-white);
+        color: var(--bg-color-2);
     }
-      
+
     & input {
         display: none;
     }

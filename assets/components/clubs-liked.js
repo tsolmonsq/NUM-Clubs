@@ -12,8 +12,9 @@ class ClubsLiked extends HTMLElement {
         this.readFromLocalStorage();
     }
     readFromLocalStorage() {
-        const clubList = JSON.parse(localStorage.getItem("cart-data"));
-        if (clubList == null) return;
+        const clubList = JSON.parse(localStorage.getItem("cart"));
+        if (clubList == null) 
+            return;
 
         const container = this.shadowRoot.getElementById("cards-container-1");
         container.innerHTML = ""; // Clear previous content

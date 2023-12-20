@@ -10,7 +10,7 @@
         margin-top: 2rem;
         margin-bottom: 1.5rem;
         max-width: 90rem;
-        color: var(--text-gray);
+        color: var(--text-color);
     }
 }
 .cards-container{
@@ -26,8 +26,8 @@
     height: 20rem;
     margin: 5%;
     width: 90%;
-    background-color: var(--default-white);
-    box-shadow: var(--bs-default);
+    background-color: var(--bg-color-2);
+    box-shadow: var(--bs-color-1);
     border-radius: 2rem;
     transition: all 0.4s ease;
     cursor: pointer;
@@ -46,7 +46,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        color: var(--text-gray2);
+        color: var(--text-color-2);
         font-size: 0.8rem;
     }
     & h2{
@@ -65,7 +65,7 @@
         justify-content: center;
         align-items: center;
         height: 15%;
-        color: var(--text-gray2);
+        color: var(--text-color-2);
         font-size: 0.9rem;
         & i{
             color: var(--primary-orange);

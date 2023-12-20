@@ -1,87 +1,85 @@
 class ClubCart extends HTMLElement {
     constructor() {
-        super();
-        this.clubs = [];
-        this.attachShadow({mode: 'open'});
-        this.#Render();
-        this.readFromLocalStorage();
+      super();
+      this.clubs = [];
+      this.attachShadow({ mode: 'open' });
+      this.#render();
+      this.readFromLocalStorage();
     }
-    #Render(){
-        this.shadowRoot.innerHTML = `
+  
+    #render() {
+      this.shadowRoot.innerHTML = `
         <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
         />
         <style>
-        .cart-container{
+          .cart-container {
             color: var(--primary-orange);
-            &:hover{
-                cursor: pointer;
+            &:hover {
+              cursor: pointer;
             }
-        }
+          }
         </style>
         <div class="cart-container">
-            <i class="fa-regular fa-heart"></i>
-            <span id="counter" >0</span>
+          <i class="fa-regular fa-heart"></i>
+          <span id="counter">${this.clubs.length}</span>
         </div>
-        `
+      `;
     }
-
+  
     connectedCallback() {
-        //implementation
-        window.addEventListener("club-like-clicked", 
-        (e) => {
-
-            if(e.detail.isLiked){
-                this.AddToCart(e.detail.theClub)  
-            }
-            else{
-                this.RemoveFromCart(e.detail.theClub);       
-            }
-        });
-    }
-    readFromLocalStorage(){
-        const counter = this.shadowRoot.querySelector("#counter");
-        const storedValue = localStorage.getItem("cart-total");
-        if (storedValue !== null) {
-            counter.innerText = storedValue;
+      window.addEventListener("club-like-clicked", (e) => {
+        if (e.detail.isLiked) {
+          this.addToCart(e.detail.theClub);
+        } else {
+          this.removeFromCart(e.detail.theClub);
         }
+      });
     }
-    AddToCart(club){
-        this.clubs.push(club);
-        const counter  = this.shadowRoot.querySelector("#counter");
-        counter.innerText = parseInt(counter.innerText, 10) + 1;   
-        localStorage.setItem("cart-total", counter.innerText);
-        localStorage.setItem("cart-data", JSON.stringify(this.clubs));
+  
+    readFromLocalStorage() {
+      const clubList = JSON.parse(localStorage.getItem("cart"));
+      if (clubList !== null) {
+        this.clubs = clubList;
+        this.#render();
+      }
     }
-    RemoveFromCart(club) {
-        const clubIndex = this.clubs.findIndex(c => c.name === club.name); 
-        if (clubIndex !== -1) {
-          this.clubs.splice(clubIndex, 1);
-      
-          const counter = this.shadowRoot.querySelector("#counter");
-          counter.innerText = parseInt(counter.innerText, 10) - 1;
-      
-          localStorage.setItem("cart-total", counter.innerText);
-          localStorage.setItem("cart-data", JSON.stringify(this.clubs));
-        }
+  
+    addToCart(club) {
+      this.clubs.push(club);
+      localStorage.setItem("cart", JSON.stringify(this.clubs));
+      this.#render();
     }
-
+  
+    removeFromCart(club) {
+      const clubIndex = this.clubs.findIndex(c => c.name === club.name);
+      if (clubIndex !== -1) {
+        this.clubs.splice(clubIndex, 1);
+  
+        // const counter = this.shadowRoot.querySelector("#counter");
+        // counter.innerText = parseInt(counter.innerText, 10) - 1;
+  
+        localStorage.setItem("cart", JSON.stringify(this.clubs));
+        this.#render();
+      }
+    }
+  
     disconnectedCallback() {
-        //implementation
+      // implementation
     }
-
+  
     attributeChangedCallback(name, oldVal, newVal) {
-        //implementation
+      // implementation
     }
-
+  
     adoptedCallback() {
-        //implementation
+      // implementation
     }
-
-}
-
-window.customElements.define('club-cart', ClubCart);
+  }
+  
+  window.customElements.define('club-cart', ClubCart);
+  

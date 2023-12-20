@@ -9,6 +9,7 @@ document.getElementById("clubs-selection").addEventListener("change", function (
       window.location.href = `./clubs.html`;
 
 });
+
 //Searching
 const searchInput = document.getElementById("site-search");
 const searchBtn = document.getElementById("search-btn");

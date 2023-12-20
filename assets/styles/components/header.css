@@ -1,6 +1,6 @@
 header{
     width: 100%;
-    background-color: var(--header-bg-clr);
+    background-color: var(--bg-color-3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@ header{
         & a{
             text-decoration: none;
             font-size: 1.1rem;
-            color: var(--text-gray);
+            color: var(--text-color-1);
             transition: 0.7s ease;
             &:hover{
                 color: var(--primary-orange);
@@ -48,11 +48,11 @@ header{
             right: -100%;
             top: 4rem;
             gap: 0;
-            background-color: var(--default-pink);
+            background-color: var(--bg-color-1);
             width: 100%;
             text-align: center;
             transition: 0.3s;
-            border-top: solid 2px var(--line-gray);
+            border-top: solid 2px var(--line-color);
             &.active{
                 left: 0;
             }
