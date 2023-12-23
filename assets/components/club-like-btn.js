@@ -42,9 +42,6 @@ class ClubLikeBtn extends HTMLElement {
         }
     }
 
-    disconnectedCallback() {
-        //implementation
-    }
     static get observedAttributes() {
         return ["checked"];
     }
@@ -53,13 +50,7 @@ class ClubLikeBtn extends HTMLElement {
         //implementation
         if(name === "checked")
             this.querySelector("#heart").checked = newVal != null;
-        
     }
-
-    adoptedCallback() {
-        //implementation
-    }
-
 }
 
 window.customElements.define('club-like-btn', ClubLikeBtn);

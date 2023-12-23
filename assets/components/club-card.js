@@ -1,5 +1,7 @@
 const template = document.createElement("template");
 
+
+
 template.innerHTML = `
       <link
       rel="stylesheet"
@@ -26,11 +28,11 @@ template.innerHTML = `
         <ul class="card-status">
           <li class="founded-year">
             <i class="fa-solid fa-calendar-days"></i>
-            <p></p>
+            <p><span></span> онд байгуулагдсан</p>
           </li>
           <li class="members">
             <i class="fa-regular fa-user"></i>
-            <p></p>
+            <p><span></span> гишүүнтэй</p>
           </li>
         </ul>
       </article>
@@ -59,6 +61,7 @@ class ClubCard extends HTMLElement {
         };
 
         localStorage.setItem(this.getAttribute("name"), val);
+
 
         const evnt = new CustomEvent('club-like-clicked', {
           composed: true,
@@ -103,10 +106,10 @@ class ClubCard extends HTMLElement {
           this.shadowRoot.querySelector(".club-description").innerHTML = newVal;
           break;
         case "fyear":
-          this.shadowRoot.querySelector(".founded-year p").innerHTML = newVal;
+          this.shadowRoot.querySelector(".founded-year p span").innerHTML = newVal;
           break;
         case "members":
-          this.shadowRoot.querySelector(".members p").innerHTML = newVal;
+          this.shadowRoot.querySelector(".members p span").innerHTML = newVal;
           break;
       }
   }

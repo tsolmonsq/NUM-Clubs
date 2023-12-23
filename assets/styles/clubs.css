@@ -5,9 +5,10 @@
 @import url("./components/club_card.css");
 @import url("./components/category_dropdown.css");
 
-.clubs{
+.clubs {
     max-width: 100%;
-    & h2{
+
+    & h2 {
         margin: 0 auto;
         padding-left: 2rem;
         margin-top: 2rem;
@@ -15,25 +16,29 @@
         max-width: 90rem;
         color: var(--text-color-1);
     }
-    & .club-filter{
+
+    & .club-filter {
         margin: 0 auto;
         max-width: 90rem;
         min-width: 18rem;
         display: flex;
-        & .search{
+
+        & .search {
             width: 20rem;
             margin-left: 1.5rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
-        & .category-dropdown{
+
+        & .category-dropdown {
             appearance: none;
             -webkit-appearance: none;
             width: 20rem;
             margin-left: 6rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
-            & select{
+
+            & select {
                 cursor: pointer;
                 border-radius: 22.5rem;
                 padding: 0.6rem;
@@ -43,12 +48,14 @@
                 box-shadow: var(--bs-color-2);
                 color: var(--bg-color-1);
                 color: var(--text-color-1);
+                background-color: var(--bg-color-2);
             }
         }
-        
-        @media (max-width: 48rem){
+
+        @media (max-width: 48rem) {
             flex-direction: column;
-            & .category-dropdown{
+
+            & .category-dropdown {
                 margin-left: 1.5rem;
                 margin-top: 0;
                 margin-bottom: 0;
@@ -57,7 +64,8 @@
     }
 
 }
-.cards-container{
+
+.cards-container {
     margin: 2rem auto;
     margin-top: 0;
     max-width: 90rem;

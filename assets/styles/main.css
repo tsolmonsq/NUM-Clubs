@@ -1,73 +1,72 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-html{
-    --primary-orange: #E55604;  
+:root {
+    --primary-orange: #E55604;
     --primary-green: #0BB5B5;
-    
-    --secondary-green: #69B0B0; //used contact info  --contact-green
+    --secondary-green: #69B0B0;
 
-    --bg-color-1: #ECE8E8; //pink background --bg-color
-    --bg-color-2: #FFFFFF; //white background --default-white
-    --bg-color-3: #FDF6F5; //pink, mostly used header --header-bg-clr
-    --bg-color-4: #F6FFFE; //lightgreen background  --default-lightgreen
+    --bg-color-1: #ECE8E8;
+    --bg-color-2: #FFFFFF;
+    --bg-color-3: #FDF6F5;
+    --bg-color-4: #F6FFFE;
 
-    --bg-gradient: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%); //gradient background 
-    
-    --text-color-1: #3D3838; //main text color  --text-gray
-    --text-color-2: #4A4A4A; //for gray text  --text-gray2
-    --text-color-3: #FBD13C; // --text-yellow
-    --text-color-4: #777777; // card status text gray color
+    --bg-gradient: linear-gradient(180deg, #ECE8E8 0%, #F7FEFE 100%);
 
-    --border-color: #D0D0D0; //main gray border  --border-color
+    --text-color-1: #3D3838;
+    --text-color-2: #4A4A4A;
+    --text-color-3: #FBD13C;
+    --text-color-4: #777777;
 
-    --bs-color1: 0 5px 10px rgba(0, 0, 0, 0.25); //main gray box shadow  --bs-default
-    --bs-hover-color: 0 10px 20px rgba(0, 0, 0, 0.25);  // --bs-default-hover
-    --bs-color-2: 0 1px 3px var(--primary-orange); //orange box shadow  --bs-orange
+    --border-color: #D0D0D0;
 
-    --like-yellow: #eba681; // when like button not checked
-    --like-red: #ff4957; // when checked like button
+    --bs-color1: 0 5px 10px rgba(0, 0, 0, 0.25);
+    --bs-hover-color: 0 10px 20px rgba(0, 0, 0, 0.25);
+    --bs-color-2: 0 1px 3px var(--primary-orange);
+    --like-yellow: #eba681;
+    --like-red: #ff4957;
 
-    --line-color: #d6d6d6; // --line-gray
+    --line-color: #d6d6d6;
 
-    --hover-gray: #797979; 
+    --hover-gray: #797979;
 
     --th-toggle-color: #3D3838;
 
-    font-family: 'M PLUS 1', sans-serif;
+
     font-family: 'Varela Round', sans-serif;
 
     background-color: var(--bg-color-1);
 
 }
 
-@media(prefers-color-scheme: dark){
-    :root{
+@media(prefers-color-scheme: dark) {
+    :root {
         --primary-orange: #E55604;
         --primary-green: #0BB5B5;
         --secondary-green: #69B0B0;
 
-        --bg-color-1: #121212; //black 1 background
-        --bg-color-2: #242424; //black 2 background
-        --bg-color-3: #242424; //header
-        --bg-color-4: #242424; //footer
-        
-        --text-color-1: #E0E0E0; //main text color
+        --bg-color-1: #121212;
+        --bg-color-2: #242424;
+        --bg-color-3: #242424;
+        --bg-color-4: #242424;
 
+        --bg-gradient: #343434;
+
+        --text-color-1: #E0E0E0;
+        --text-color-2: #9b9b9b;
         --text-color-3: #FBD13C;
-        --text-color-4: #d4d4d4;
+        --text-color-4: #9e9999;
 
-        --border-color: #444444; //main border
-
+        --border-color: #363333;
         --th-toggle-color: #3D3838;
 
-        background-color: var(--bg-color);
+        background-color: var(--bg-color-1);
     }
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -87,30 +86,33 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
     & .toggle {
         display: flex;
         align-items: center;
         cursor: pointer;
+
         & i {
             font-size: 2rem;
             margin: 0 5px;
         }
     }
-    & input:checked + .toggle .fas.fa-moon {
+
+    & input:checked+.toggle .fas.fa-moon {
         display: none;
     }
-      
-    & input:checked + .toggle .fas.fa-sun {
+
+    & input:checked+.toggle .fas.fa-sun {
         display: inline;
         color: var(--text-yellow);
-        
+
     }
-      
-    & input:not(:checked) + .toggle .fas.fa-sun {
+
+    & input:not(:checked)+.toggle .fas.fa-sun {
         display: none;
     }
-      
-    & input:not(:checked) + .toggle .fas.fa-moon {
+
+    & input:not(:checked)+.toggle .fas.fa-moon {
         display: inline;
         color: var(--bg-color-2);
     }
