@@ -31,10 +31,36 @@
     />
     <link rel="stylesheet" href="./assets/styles/homepage.css">
     <title>NUM Student Clubs</title>
+    <script type="module" src="./assets/modules/header.js"></script>
+    <script src="./assets/components/club-cart.js"></script>
   </head>
     <header class="header">
-        <img src="assets/images/logo.png" alt="NUM Clubs logo" />
-      <button id="login">Нэвтрэх</button>
+        <nav class="navbar-container">
+          <a href="./index.html">
+            <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+          </a>
+          <ul class="navbar-items">     
+              <li>
+                <a href="./clubs.html">Клубүүд</a>             
+              </li> 
+              <li>
+                <a href="./events.html">Эвентүүд</a>
+              </li>  
+              <li>
+                <a href="./liked_clubs.html">
+                  <club-cart></club-cart>
+                </a>
+              </li>
+              <li>
+                <a href="./login.html">
+                  <i class="fa-regular fa-user"></i>
+                </a>
+              </li>
+          </ul>
+          <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </nav>
     </header>
     <main>
       <section class="large-hero">
@@ -54,8 +80,9 @@
         </div>   
       </section>
       
-        <section class="category-slider">       
+        <!-- <section class="category-slider">       
             <h2>Ангилал</h2>
+
             <div class="main">
               <div class="page">
                 <article class="category-card">
@@ -106,7 +133,81 @@
               <label for="one" class="one"></label>
               <label for="two" class="two"></label>
             </div>
+        </section> -->
+        <section class="category-slider">       
+          <h2>Ангилал</h2>
+          <input type="radio" id="one" name="slider" checked hidden>
+          <input type="radio" id="two" name="slider" hidden>
+          <div class="main">
+            <!-- Page 1 -->
+            <div class="page">
+              <!-- Category cards for page 1 -->
+              <article class="category-card">
+                <img src="./assets/images/supplies.jpg" alt="art" />
+                <h3 >Дүрслэх урлаг</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/lit.jpg" alt="literature" />
+                <h3>Уран зохиол</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3>Спорт</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/debate2.jpg" alt="debate" />
+                <h3>Илтгэл мэтгэлцээн</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/tech.jpg" alt="technology" />
+                <h3>Технологи</h3>
+              </article>
+            </div>
+            <!-- Page 2 -->
+            <div class="page">
+              <!-- Category cards for page 2 -->
+              <article class="category-card">
+                <img src="./assets/images/supplies.jpg" alt="art" />
+                <h3 >Дүрслэх урлаг</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/lit.jpg" alt="literature" />
+                <h3>Уран зохиол</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/sport2.jpeg" alt="sport" />
+                <h3>Спорт</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/debate2.jpg" alt="debate" />
+                <h3>Илтгэл мэтгэлцээн</h3>
+              </article>
+              <article class="category-card">
+                <img src="./assets/images/tech.jpg" alt="technology" />
+                <h3>Технологи</h3>
+              </article>
+            </div>
+          </div>
+          <div class="button">
+            <label for="one" class="one"></label>
+            <label for="two" class="two"></label>
+          </div>
         </section>
+        <script>
+          // slideraa guilgeh JavaScript 
+          document.querySelectorAll('.button label').forEach(label => {
+            label.addEventListener('click', function() {
+              const main = document.querySelector('.main');
+              const index = this.classList.contains('one') ? 0 : -100;
+              main.style.marginLeft = index + '%';
+            });
+          });
+          </script>
+
+
+
+
+
         <section class="featured-clubs">
           <h2>Клубууд</h2>
           <div class="cards-container">
@@ -201,10 +302,15 @@
             </article>
           </div>
           <a href="clubs.html">Бүгдийг үзэх</a>
-  
-          
         </section>
     </main>
+    <div class="toggle-container">
+      <input type="checkbox" id="mode-toggle" />
+      <label for="mode-toggle" class="toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </label>
+    </div>
     <footer>
       <p>Developed by <b>Num Clubs team</b></p>
       <address>  
