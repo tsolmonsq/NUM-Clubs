@@ -4,11 +4,12 @@ class LikedClubs{
         this.clubList = [];
     }
     readLocalStorage(){
-        this.clubList = JSON.parse(localStorage.getItem("cart-data"));
+        this.clubList = localStorage.getItem("cart-data");
     }
 
     createClubCard(club) {
         const clubCard = document.createElement("club-card");
+        clubCard.setAttribute("id", club.id);
         clubCard.setAttribute("name", club.name);
         clubCard.setAttribute("category", club.category);
         clubCard.setAttribute("cover", club.coverImage);

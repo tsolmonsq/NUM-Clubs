@@ -1,7 +1,5 @@
 const template = document.createElement("template");
 
-
-
 template.innerHTML = `
       <link
       rel="stylesheet"
@@ -38,7 +36,6 @@ template.innerHTML = `
       </article>
 `;
 
-
 class ClubCard extends HTMLElement {
     constructor() {
         super();
@@ -46,11 +43,14 @@ class ClubCard extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.addEventListener("club-like-btn-liked", ()=>this.#likeBtnClicked(true));
         this.addEventListener("club-like-btn-disliked", ()=>this.#likeBtnClicked(false));
+        this.addEventListener("click", (e)=>this.#clicked(e));
+
     }
     #likeBtnClicked(val){
       console.log("club-like-btn event recieved!");
 
         let clubData = {
+          id: this.getAttribute("id"),
           name: this.getAttribute("name"),
           category: this.getAttribute("category"),
           coverImage: this.getAttribute("cover"),
@@ -62,7 +62,7 @@ class ClubCard extends HTMLElement {
 
         localStorage.setItem(this.getAttribute("name"), val);
 
-
+        
         const evnt = new CustomEvent('club-like-clicked', {
           composed: true,
           detail: {
@@ -71,10 +71,23 @@ class ClubCard extends HTMLElement {
             theClub: clubData
           }
         });
+
+      
       window.dispatchEvent(evnt);
 
       if(!val)
         this.shadowRoot.querySelector("club-like-btn").removeAttribute("checked");
+
+    }
+
+    #clicked(e) {
+      const isClubLikeBtn = e.composedPath().includes(this.shadowRoot.querySelector("club-like-btn"));
+  
+      if (!isClubLikeBtn) {
+
+          const clubId = this.getAttribute("id");
+          window.location.href = `./about_club.html?id=${clubId}`;
+      }
     }
 
     connectedCallback(){
@@ -82,14 +95,17 @@ class ClubCard extends HTMLElement {
       if(likedState === "true"){
         this.shadowRoot.querySelector("club-like-btn").setAttribute("checked", true);
       }
+      
     }
     
     static get observedAttributes() {
-      return ["logo", "cover", "name", "category", "desc", "fyear", "members"];
+      return ["id", "logo", "cover", "name", "category", "desc", "fyear", "members"];
     }
 
     attributeChangedCallback(name, oldVal, newVal) { 
       switch(name){
+        case "id":
+          this.shadowRoot.id = newVal;
         case "cover":
           this.shadowRoot.querySelector(".cover").src = newVal;
           break;

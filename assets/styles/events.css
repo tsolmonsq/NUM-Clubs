@@ -2,18 +2,20 @@
 @import url("./components/header.css");
 @import url("./components/footer.css");
 
-.events{
+.events {
     max-width: 100%;
-    & h1{
+
+    & h1 {
         margin: 0 auto;
         padding-left: 2rem;
         margin-top: 2rem;
         margin-bottom: 1.5rem;
         max-width: 90rem;
-        color: var(--text-color);
+        color: var(--text-color-1);
     }
 }
-.cards-container{
+
+.cards-container {
     margin: 2rem auto;
     margin-top: 0;
     max-width: 90rem;
@@ -22,7 +24,7 @@
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
 }
 
-.event-card{
+.event-card {
     height: 20rem;
     margin: 5%;
     width: 90%;
@@ -34,13 +36,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    & .cover{
+
+    & .cover {
         width: 100%;
         height: 50%;
         object-fit: cover;
         border-radius: 2rem 2rem 0 0;
     }
-    & div{
+
+    & div {
         height: 10%;
         width: 100%;
         display: flex;
@@ -49,7 +53,8 @@
         color: var(--text-color-2);
         font-size: 0.8rem;
     }
-    & h2{
+
+    & h2 {
         font-size: 1.2rem;
         width: 100%;
         height: 25%;
@@ -57,8 +62,10 @@
         justify-content: center;
         text-align: center;
         align-items: center;
+        color: var(--text-color-1);
     }
-    & .location{
+
+    & .location {
         display: flex;
         gap: 0.3rem;
         width: 100%;
@@ -67,11 +74,13 @@
         height: 15%;
         color: var(--text-color-2);
         font-size: 0.9rem;
-        & i{
+
+        & i {
             color: var(--primary-orange);
         }
     }
-    &:hover{
+
+    &:hover {
         transform: translateY(-5px);
         cursor: pointer;
     }

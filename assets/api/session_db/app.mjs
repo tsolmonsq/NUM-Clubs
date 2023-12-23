@@ -20,4 +20,8 @@ app.get('/', (req, res) => {
 
 app.get('/clubs', async (req, res) => await clubs.getClubs(req, res));
 
+app.get('/clubs/:id', async(req, res) => {
+    await clubs.getClubById(req, res);
+});
+
 app.listen(port, () => console.log(`App listening on port http://localhost:${port}`));

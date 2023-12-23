@@ -12,7 +12,6 @@ class ClubPage {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-        
       this.data = await response.json();
       this._list = this.filterByTag(this.data);
       this.render();
@@ -41,10 +40,10 @@ class ClubPage {
         club.category.toLowerCase() === this._tagFilter.toLowerCase()
     );
   }
-    
-    
+
   createClubCard(club) {
     const clubCard = document.createElement("club-card");
+    clubCard.setAttribute("id", club.clubId);
     clubCard.setAttribute("name", club.clubName);
     clubCard.setAttribute("category", club.category);
     clubCard.setAttribute("cover", club.coverImage);
@@ -82,7 +81,6 @@ class ClubPage {
   }
 
 }
-
 
 const clubPage = new ClubPage("cards-container-1");
 clubPage.init();

@@ -3,7 +3,6 @@
     gap: 0.6rem;
 
     & input {
-        // border: solid 0.09rem var(--primary-orange);
         border: solid 0.09rem var(--primary-orange);
         border-radius: 22.5rem;
         padding: 0.6rem;
