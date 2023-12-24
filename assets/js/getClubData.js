@@ -40,7 +40,8 @@ class ClubPage {
         club.category.toLowerCase() === this._tagFilter.toLowerCase()
     );
   }
-
+    
+    
   createClubCard(club) {
     const clubCard = document.createElement("club-card");
     clubCard.setAttribute("id", club.clubId);
@@ -82,6 +83,7 @@ class ClubPage {
 
 }
 
+
 const clubPage = new ClubPage("cards-container-1");
 clubPage.init();
 
@@ -104,6 +106,7 @@ const searchBtn = document.getElementById("search-btn");
 
 searchBtn.addEventListener("click", () => {
   const searchVal = searchInput.value.trim().toLowerCase();
+
   clubPage._list = clubPage.searchByName(searchVal);
   clubPage.render();
 });

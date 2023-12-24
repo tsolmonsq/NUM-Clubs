@@ -1,35 +1,21 @@
-const darkModeMediaQuery = window.matchMedia('prefers-color-schema: dark');
+const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const darkModeToggle = document.getElementById('mode-toggle');
 
-function handleDarkModeChange(e){
-    if(e.matches){
+function enableDarkMode() {
+  document.body.classList.add('dark-mode');
+}
+
+function disableDarkMode() {
+  document.body.classList.remove('dark-mode');
+}
+
+function handleDarkModeChange(e) {
+    if (e.matches) {
         enableDarkMode();
-    }
-    else{
+    } else {
         disableDarkMode();
     }
 }
-darkModeMediaQuery.addEventListener(handleDarkModeChange);
 
+darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
 handleDarkModeChange(darkModeMediaQuery);
-
-
-const windowsDarkMode = document.getElementById('toggleDarkMode');
-
-windowsDarkMode.addEventListener('change', () => {
-    if(windowsDarkMode.checked){
-        enableDarkMode();
-    }
-    else{
-        disableDarkMode();
-    }
-})
-
-// const darkModeToggle = document.getElementById('toggleDarkMode');
-
-// darkModeToggle.addEventListener('click', () => {
-//     if(darkModeToggle.checked)
-//         document.body.classList.toggle("dark-mode");
-//     else{
-//         document.body.classList.toggle(":root");
-//     }
-// })

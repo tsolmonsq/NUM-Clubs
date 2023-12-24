@@ -33,6 +33,8 @@
     <title>NUM Student Clubs</title>
     <script type="module" src="./assets/modules/header.js"></script>
     <script src="./assets/components/club-cart.js"></script>
+    <script src="./assets/components/club-card.js"></script>
+    <script src="./assets/components/club-like-btn.js"></script>
   </head>
     <header class="header">
         <nav class="navbar-container">
@@ -72,9 +74,9 @@
           </p>
           <div class="search">
             <input id="site-search" placeholder="Клубийн нэрээр хайх" />
-            <button aria-label="Search" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
+              <button aria-label="Search" type="submit" id="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
           </div>
           <img src="assets/images/homepage-dec.png" alt="homepage" />
         </div>   
@@ -134,108 +136,31 @@
             </div>
         </section>
         <section class="featured-clubs">
-          <h2>Клубууд</h2>
-          <div class="cards-container">
-            <article class="club-card">
-              <img class="cover" src="./assets/images/art_gallery.jpg" alt="artemisia_cover" />
-  
-              <div class="card-head">
-                <img
-                  class="club-logo"
-                  src="./assets/./images/./artemisia_logo.jpg"
-                  alt="artemisia_logo"
-                />
-                <div class="card-head-txt">
-                  <span class="club-tag">Дүрслэх урлаг</span>
-                  <h3>Artemisia art club</h3>
-                </div>
-              </div>
-  
-              <p class="club-description">Artemisia МУИС-ийн уран зургийн клуб</p>
-              <ul class="card-status">
-                <li>
-                  <i class="fa-solid fa-calendar-days"></i>
-                  <p>2018 он</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-user"></i>
-                  <p>78 гишүүнтэй</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <p>Элсэлт авч байгаа</p>
-                </li>
-              </ul>
-            </article>
-            <article class="club-card">
-              <img class="cover" src="./assets/images/art_gallery.jpg" alt="artemisia_cover" />
-              <div class="card-head">
-                <img
-                  class="club-logo"
-                  src="./assets/./images/./artemisia_logo.jpg"
-                  alt="artemisia_logo"
-                />
-                <div class="card-head-txt">
-                  <span class="club-tag">Дүрслэх урлаг</span>
-                  <h3>Artemisia art club</h3>
-                </div>
-              </div>
-              <p class="club-description">Artemisia МУИС-ийн уран зургийн клуб</p>
-              <ul class="card-status">
-                <li>
-                  <i class="fa-solid fa-calendar-days"></i>
-                  <p>2018 он</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-user"></i>
-                  <p>78 гишүүнтэй</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <p>Элсэлт авч байгаа</p>
-                </li>
-              </ul>
-            </article>
-            <article class="club-card">
-              <img class="cover" src="./assets/images/art_gallery.jpg" alt="artemisia_cover" />
-              <div class="card-head">
-                <img
-                  class="club-logo"
-                  src="./assets/./images/./artemisia_logo.jpg"
-                  alt="artemisia_logo"
-                />
-                <div class="card-head-txt">
-                  <span class="club-tag">Дүрслэх урлаг</span>
-                  <h3>Artemisia art club</h3>
-                </div>
-              </div>
-              <p class="club-description">Artemisia МУИС-ийн уран зургийн клуб</p>
-              <ul class="card-status">
-                <li>
-                  <i class="fa-solid fa-calendar-days"></i>
-                  <p>2018 он</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-user"></i>
-                  <p>78 гишүүнтэй</p>
-                </li>
-                <li>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <p>Элсэлт авч байгаа</p>
-                </li>
-              </ul>
-            </article>
+          <div class="head">
+            <h2>Клубууд</h2>
+            <a href="./clubs.html">Бүгдийг үзэх <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-          <a href="clubs.html">Бүгдийг үзэх</a>
+          <div class="cards-container">
+            <club-card
+            id="1" name="Artemisia art Club" category="Дүрслэх урлаг" cover="./assets/images/art_gallery.jpg" logo="./assets/images/artemisia_logo.jpg" desc="МУИС-ийн уран зурагт хайртай оюутан залуусын нэгдсэн клуб." fyear="2018" members="78"
+            ></club-card>
+            <club-card
+            id="2" name="NumCord" category="Технологи" cover="./assets/images/numcord-cover.jpg" logo="./assets/images/numcord_logo.jpg" desc="МУИС-ийн цор ганц 1200+ гишүүнтэй дискорд сервер." fyear="2017" members="77"
+            ></club-card>
+            <club-card
+            id="3" name="Hackum Students Club" category="Технологи" cover="./assets/images/hackum_cover.jpg" logo="./assets/images/hackum_logo.png" desc="Мэдээллийн технологийн чиглэлээр үйл ажиллагаа явуулдаг оюутны клуб." fyear="2016" members="76"
+            ></club-card>
+          </div>
         </section>
     </main>
-    <div class="toggle-container">
+    <!-- Light dark mode button -->
+    <!-- <div class="toggle-container">
       <input type="checkbox" id="mode-toggle" />
       <label for="mode-toggle" class="toggle">
         <i class="fas fa-moon"></i>
         <i class="fas fa-sun"></i>
       </label>
-    </div>
+    </div> -->
     <footer>
       <p>Developed by <b>Num Clubs team</b></p>
       <address>  
@@ -244,6 +169,6 @@
             <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
-    <script src = "bundled.js"></script>
+    <script type="module" src="./assets/js/getClubData.js" defer></script>
   </body>
 </html>

@@ -4,6 +4,7 @@
 
 .events {
     max-width: 100%;
+    margin-top: 6rem;
 
     & h1 {
         margin: 0 auto;
@@ -12,6 +13,10 @@
         margin-bottom: 1.5rem;
         max-width: 90rem;
         color: var(--text-color-1);
+    }
+
+    @media (max-width: 48rem) {
+        margin-top: 10rem;
     }
 }
 
