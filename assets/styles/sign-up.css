@@ -5,9 +5,11 @@
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
+
+
 
 /* header */
 .signup-header {
@@ -27,7 +29,7 @@
 
 /* input*/
 .signup-form input {
-    width: 94%; 
+    width: 94%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -38,7 +40,8 @@
 .signup-button {
     width: 100%;
     padding: 10px;
-    background-color: #0BB5B5; /* You can change the color to differentiate from login button */
+    background-color: #0BB5B5;
+    /* You can change the color to differentiate from login button */
     color: white;
     border: none;
     border-radius: 4px;
@@ -49,5 +52,6 @@
 
 /* Hover effect*/
 .signup-button:hover {
-    background-color: #139191; /* Darker shade for hover effect */
+    background-color: #139191;
+    /* Darker shade for hover effect */
 }

@@ -8,7 +8,7 @@ template.innerHTML = `
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       />
-      <link rel="stylesheet" href="./assets/styles/clubs.css" />
+      <link rel="stylesheet" href="./styles/clubs.css" />
       
       <article class="club-card">
         <img class="cover"/>
@@ -86,7 +86,7 @@ class ClubCard extends HTMLElement {
       if (!isClubLikeBtn) {
 
           const clubId = this.getAttribute("id");
-          window.location.href = `./about_club.html?id=${clubId}`;
+          window.location.href = `./aboutclub?id=${clubId}`;
       }
     }
 

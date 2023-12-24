@@ -93,10 +93,10 @@ document.getElementById("clubs-selection").addEventListener("change", function (
     
   const selectedValue = this.value;
   if (selectedValue !== "") {
-    window.location.href = `./clubs.html?category=${selectedValue}`;
+    window.location.href = `./numclubs?category=${selectedValue}`;
   } 
   else 
-    window.location.href = `./clubs.html`;
+    window.location.href = `./numclubs`;
 
 });
 
