@@ -35,34 +35,28 @@
   </head>
 
   <body>
-    <div class="login-container">
+    <section class="login-section">
       <div class="login-header">
         <h2>Нэвтрэх</h2>
         <span class="close-button">&times;</span>
       </div>
 
-      <form class="login-form">
+      <form class="login-form" id="login-form">
         <label for="email">Цахим шуудан</label>
+        <input type="email" id="email" placeholder="example@mail.com" />
+        <label for="password">Нууц үг</label>
         <input
-          type="email"
-          id="email"
-          placeholder="21B1NUM1497@stud.num.edu.mn"
+          type="password"
+          id="password"
+          placeholder="Нууц үгээ оруулна уу"
         />
         <button type="submit" class="login-button">Нэвтрэх</button>
-
-        <div class="divider">
-          <hr class="line" />
-          <span class="or">эсвэл</span>
-          <hr class="line" />
-        </div>
-
-        <button class="social-button facebook-button">
-          <i class="fab fa-facebook-f"></i> facebook
-        </button>
-        <button class="social-button google-button">
-          <i class="fab fa-google"></i> Google
-        </button>
       </form>
-    </div>
+
+      <a href="./signuppage">Бүртгэл үүсгэх</a>
+
+      <p id="signup-message"></p>
+    </section>
+    <script src="./assets/js/login.js"></script>
   </body>
 </html>
