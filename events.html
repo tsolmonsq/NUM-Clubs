@@ -29,31 +29,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/styles/events.css" />
+    <link rel="stylesheet" href="./styles/events.css" />
     <title>NUM Student Clubs</title>
-    <script type="module" src="./assets/modules/header.js"></script>
-    <script src="./assets/components/club-cart.js"></script>
+    <script type="module" src="./modules/header.js"></script>
+    <script src="./components/club-cart.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar-container">
-        <a href="./index.html">
-          <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+        <a href="./">
+          <img src="images/logo.png" alt="NUM Clubs logo" />
         </a>
         <ul class="navbar-items">
           <li>
-            <a href="./clubs.html">Клубүүд</a>
+            <a href="./numclubs">Клубүүд</a>
           </li>
           <li>
-            <a href="./events.html">Эвентүүд</a>
+            <a href="./events">Эвентүүд</a>
           </li>
           <li>
-            <a href="./liked_clubs.html">
+            <a href="./likedclubs">
               <club-cart></club-cart>
             </a>
           </li>
           <li>
-            <a href="./login.html">
+            <a href="./login">
               <i class="fa-regular fa-user"></i>
             </a>
           </li>
@@ -68,11 +68,7 @@
         <h1>Ойрын эвентүүд</h1>
         <div class="cards-container" id="cards-container-2">
           <article class="event-card">
-            <img
-              class="cover"
-              src="./assets/images/gallery.jpg"
-              alt="galleryEvent"
-            />
+            <img class="cover" src="./images/gallery.jpg" alt="galleryEvent" />
             <div>
               <span class="day">2023 он 10 сарын 15</span>
               <span class="time">18:00-20:00</span>
@@ -86,7 +82,7 @@
           <article class="event-card">
             <img
               class="cover"
-              src="./assets/images/movie_night.jpg"
+              src="./images/movie_night.jpg"
               alt="movie_night_twilight"
             />
             <div>
@@ -102,7 +98,7 @@
           <article class="event-card">
             <img
               class="cover"
-              src="./assets/images/tech_meetup.jpg"
+              src="./images/tech_meetup.jpg"
               alt="tech_meetup_ui_ux"
             />
             <div>
@@ -133,6 +129,6 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
-    <script type="module" src="./assets/js/getClubData.js" defer></script>
+    <script type="module" src="./js/getClubData.js" defer></script>
   </body>
 </html>

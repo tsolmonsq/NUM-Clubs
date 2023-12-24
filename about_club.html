@@ -29,29 +29,28 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/styles/index.css" />
-    <link rel="stylesheet" href="./assets/styles/about_club.css" />
+    <link rel="stylesheet" href="./styles/about_club.css" />
     <title>NUM Student Clubs</title>
-    <script src="./assets/components/club-comment.js" defer></script>
-    <script type="module" src="./assets/modules/header.js"></script>
-    <script src="./assets/components/club-cart.js"></script>
-    <script type="module" src="./assets/js/PopUp.js"></script>
+    <script src="./components/club-comment.js" defer></script>
+    <script type="module" src="./modules/header.js"></script>
+    <script src="./components/club-cart.js"></script>
+    <script type="module" src="./js/PopUp.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar-container">
-        <a href="./index.html">
-          <img src="assets/images/logo.png" alt="NUM Clubs logo" />
+        <a href="./">
+          <img src="./images/logo.png" alt="NUM Clubs logo" />
         </a>
         <ul class="navbar-items">
           <li>
-            <a href="./clubs.html">Клубүүд</a>
+            <a href="./numclubs">Клубүүд</a>
           </li>
           <li>
-            <a href="./events.html">Эвентүүд</a>
+            <a href="./events">Эвентүүд</a>
           </li>
           <li>
-            <a href="./liked_clubs.html">
+            <a href="./likedclubs">
               <club-cart></club-cart>
             </a>
           </li>
@@ -82,7 +81,7 @@
         <a href="#"><i class="fa-regular fa-envelope"></i></a>
       </address>
     </footer>
-    <script src="./assets/js/clubDetail.js"></script>
+    <script src="./js/clubDetail.js"></script>
     <script>
       let count = 0;
       function oncomment() {

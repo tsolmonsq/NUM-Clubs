@@ -6,7 +6,7 @@
 
 
 .large-hero {
-    max-width: 100%;
+    width: 100%;
     background: var(--bg-gradient);
     display: flex;
     align-items: center;

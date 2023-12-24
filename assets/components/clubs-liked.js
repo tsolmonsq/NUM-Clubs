@@ -3,7 +3,7 @@ class ClubsLiked extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./assets/styles/clubs.css" />
+            <link rel="stylesheet" href="./styles/clubs.css" />
             <div class="cards-container" id="cards-container-1"></div>
         `;
     }
