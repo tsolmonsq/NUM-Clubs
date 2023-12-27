@@ -11,7 +11,8 @@ document.getElementById("login-form").addEventListener("submit", async function 
         'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-        // your login credentials
+            email: email,
+            password: password
         }),
     })
     .then(response => {
@@ -21,7 +22,16 @@ document.getElementById("login-form").addEventListener("submit", async function 
         return response.json();
     })
     .then(data => {
-        // handle successful login
+        // Assuming the server sends back a session token or ID
+    const sessionToken = data.token;
+   
+
+    // Store the token in local storage or session storage
+    localStorage.setItem('sessionToken', sessionToken);
+
+    // Redirect to user dashboard or home page
+    window.location.href = '/dashboard.html'; // Change this to your user-specific page
+        
     })
     .catch(error => {
         console.error('Login Error:', error.message);

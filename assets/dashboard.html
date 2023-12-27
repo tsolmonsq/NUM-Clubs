@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .logout-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <p>This is the user dashboard where you can manage your account and view information.</p>
+     
+        <button id="logoutButton">Logout</button>
+
+    </div>
+   
+<div id="welcomeMessage"></div>
+
+    <script>
+     
+
+    window.onload = function() {
+        // Retrieve the username from local storage
+        var username = localStorage.getItem('username');
+
+        // Display the username
+        if (username) {
+            document.getElementById('welcomeMessage').innerText = 'Welcome, ' + username;
+        } else {
+            // Handle cases where the username is not available
+            document.getElementById('welcomeMessage').innerText = 'Welcome!';
+        }
+    };
+
+
+
+
+
+    </script>
+</body>
+</html>
