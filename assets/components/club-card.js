@@ -33,6 +33,7 @@ template.innerHTML = `
             <p><span></span> гишүүнтэй</p>
           </li>
         </ul>
+        <slot name="remove"></slot>
       </article>
 `;
 
