@@ -7,17 +7,17 @@ const SALT_ROUNDS = 10;
 class DbUser {
   constructor() {}
 
-  async isUsernameTaken(username) {
-    try {
-      const result = await sql`
-        SELECT id FROM public.users WHERE username = ${username};
-      `;
-      return result.length > 0;
-    } catch (error) {
-      console.error('Error checking username:', error);
-      throw error;
-    }
-  }
+  // async isUsernameTaken(username) {
+  //   try {
+  //     const result = await sql`
+  //       SELECT id FROM public.users WHERE username = ${username};
+  //     `;
+  //     return result.length > 0;
+  //   } catch (error) {
+  //     console.error('Error checking username:', error);
+  //     throw error;
+  //   }
+  // }
 
   async isEmailTaken(email) {
     try {
@@ -38,10 +38,7 @@ class DbUser {
 
   async createUser(username, email, password) {
     try {
-      if (await this.isUsernameTaken(username)) {
-        throw new Error('Username is already taken.');
-      }
-
+  
       if (await this.isEmailTaken(email)) {
         throw new Error('Email is already taken.');
       }
@@ -80,32 +77,33 @@ class DbUser {
     }
   }
 
+
   async login(email, password) {
     try {
-      const user = await sql`
-        SELECT 
-          id, username, email, password
-        FROM 
-          public.users
-        WHERE 
-          email=${email};
-      `;
+        const user = await sql`
+            SELECT 
+                id, username, email, password
+            FROM 
+                public.users
+            WHERE 
+                email = ${email};
+        `;
 
-      if (user.length === 0) {
-        throw new Error('User not found.');
-      }
+        if (user.length === 0) {
+            throw new Error('User not found.');
+        }
 
-      const match = await bcrypt.compare(password, user[0].password);
+        const match = await bcrypt.compare(password, user[0].password);
 
-      if (!match) {
-        throw new Error('Invalid password.');
-      }
+        if (!match) {
+            throw new Error('Invalid password.');
+        }
 
-      return user;
-      
+        return user;
+
     } catch (error) {
-      console.error('Error during login:', error);
-      throw error;
+        console.error('Error during login:', error);
+        throw error;
     }
   }
 }

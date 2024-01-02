@@ -30,15 +30,19 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./styles/events.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/sign-up.css" />
+
     <title>NUM Student Clubs</title>
     <script type="module" src="./modules/header.js"></script>
+    <script type="module" src="./modules/loginbox.js"></script>
     <script src="./components/club-cart.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar-container">
         <a href="./">
-          <img src="images/logo.png" alt="NUM Clubs logo" />
+          <img src="./images/logo.png" alt="NUM Clubs logo" />
         </a>
         <ul class="navbar-items">
           <li>
@@ -52,16 +56,73 @@
               <club-cart></club-cart>
             </a>
           </li>
-          <li>
-            <a href="./login">
-              <i class="fa-regular fa-user"></i>
-            </a>
+          <li id="login-cont">
+            <button id="openModal" class="btn">Нэвтрэх</button>
           </li>
         </ul>
         <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
       </nav>
+      <!-- Login modal box -->
+      <div id="loginModal" class="modal">
+        <section class="login-section">
+          <div class="login-header">
+            <h2>Нэвтрэх</h2>
+            <span id="closeModal" class="close-button">&times;</span>
+          </div>
+
+          <form class="login-form" id="login-form">
+            <label for="email">Имэйл хаяг</label>
+            <input type="email" id="email" placeholder="example@mail.com" />
+            <label for="password">Нууц үг</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Нууц үгээ оруулна уу"
+            />
+            <button type="submit" class="login-button">Нэвтрэх</button>
+          </form>
+
+          <a id="signupLink">Бүртгэл үүсгэх</a>
+          <p id="message"></p>
+        </section>
+      </div>
+      <!--  -->
+      <!-- Sign-up modal box -->
+      <div id="signupModal" class="signup-container">
+        <div class="signup-header">
+          <h2>Бүртгүүлэх</h2>
+          <span id="closeSignupModal" class="close-button">&times;</span>
+        </div>
+
+        <form class="signup-form" id="signup-form">
+          <label for="username">Таны нэр</label>
+          <input type="text" id="username" placeholder="Нэрээ оруулна уу" />
+          <label for="signup-email">Имэйл хаяг</label>
+          <input
+            type="email"
+            id="signup-email"
+            placeholder="Имэйл хаягаа оруулна уу"
+          />
+          <label for="signup-password">Нууц үг</label>
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Нууц үгээ оруулна уу"
+          />
+          <label for="signup-password-confirm">Нууц үг давтан оруулах</label>
+          <input
+            type="password"
+            id="signup-password-confirm"
+            placeholder="Нууц үгээ дахин оруулна уу"
+          />
+          <button type="submit" class="signup-button">Бүртгүүлэх</button>
+        </form>
+
+        <p id="messageSignUp"></p>
+      </div>
+      <!--  -->
     </header>
     <main>
       <section class="events">
@@ -130,5 +191,7 @@
       </address>
     </footer>
     <script type="module" src="./js/getClubData.js" defer></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/signup.js"></script>
   </body>
 </html>

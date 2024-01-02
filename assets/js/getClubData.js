@@ -83,7 +83,6 @@ class ClubPage {
 
 }
 
-
 const clubPage = new ClubPage("cards-container-1");
 clubPage.init();
 

@@ -80,14 +80,9 @@
         transition: 1s;
     }
 
-    #two:checked~& .main {
-        margin-left: -100%;
-    }
-
     & .page {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
         margin: 0 1.25rem;
         justify-content: space-between;
     }

@@ -6,7 +6,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
   let password = document.getElementById("signup-password").value;
   let confirmPassword = document.getElementById("signup-password-confirm").value;
 
-  let messageElement = document.getElementById("signup-message");
+  let messageElement = document.getElementById("messageSignUp");
 
   if (!isValidPassword(password)) {
     messageElement.textContent = "Нууц үг багадаа 8 тэмдэгтээс бүрдэх ба хамгийн багадаа нэг тоо, хамгийн багадаа нэг том үсэг, багадаа нэг жижиг үсэг агуулсан байх шаардлагатай!";
@@ -30,11 +30,15 @@ document.getElementById("signup-form").addEventListener("submit", async function
     if (response.ok) {
       const data = await response.json();
       console.log("Success:", data);
-      messageElement.textContent = "Бүртгэл амжилттай!";
+      alert("Бүртгэл амжилттай!");
+      location.reload();
+      
+      
     } else if (response.status === 400) {
   
       const errorResponse = await response.json();
-      messageElement.textContent = "Validation Error: " + errorResponse.message;
+      messageElement.textContent = "Имэйл хаяг бүртгэгдсэн байна!";
+
     } else {
       const errorResponse = await response.json();
       throw new Error(`Network response was not ok. Status: ${response.status}, Message: ${errorResponse.message}`);
