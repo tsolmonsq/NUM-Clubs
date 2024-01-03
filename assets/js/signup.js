@@ -1,3 +1,4 @@
+//Sign-up hiih 
 document.getElementById("signup-form").addEventListener("submit", async function (event) {
   event.preventDefault();
 
@@ -51,6 +52,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
 });
 
 
+//Passwordiig shalgah
 function isValidPassword(password) {
   //"Нууц үг нь дээд тал нь 8 тэмдэгтээс их, хамгийн багадаа нэг тоо, хамгийн багадаа нэг том үсэг, багадаа нэг жижиг үсэг агуулсан байх шаардлагатай!"
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;

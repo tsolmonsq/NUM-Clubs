@@ -1,5 +1,6 @@
 import dbComment from "../db/db_comment.mjs";
 
+//Commentuudiin medeeleltei haritsah
 class Comment{
     constructor(){
 

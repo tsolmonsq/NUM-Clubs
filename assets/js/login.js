@@ -1,3 +1,4 @@
+//Login hiih
 document.getElementById("login-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -85,6 +86,7 @@ if (username) {
     `;
 }
 
+//Logout hiih
 document.addEventListener("click", (event) => {
     if (event.target.id === "logoutbtn") {
 

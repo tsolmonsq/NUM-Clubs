@@ -1,5 +1,6 @@
 import sql from './db.mjs';
 
+//Ugugdliin san dahi commentiin medeeleltei haritsah
 class DbComment{
     constructor(){}
 

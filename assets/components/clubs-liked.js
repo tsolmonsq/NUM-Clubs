@@ -1,3 +1,4 @@
+// Taalagdsan club-iin carduudiig hadgalah component
 class ClubsLiked extends HTMLElement {
     constructor() {
         super();

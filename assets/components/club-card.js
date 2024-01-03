@@ -1,3 +1,4 @@
+//Club-card component-iin template
 const template = document.createElement("template");
 
 template.innerHTML = `
@@ -42,6 +43,8 @@ class ClubCard extends HTMLElement {
         super();
         this.attachShadow({mode:'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
+        
+        //club-like-btn component-iin shidsen event-iig barij avj baina.
         this.addEventListener("club-like-btn-liked", ()=>this.#likeBtnClicked(true));
         this.addEventListener("club-like-btn-disliked", ()=>this.#likeBtnClicked(false));
         this.addEventListener("click", (e)=>this.#clicked(e));
@@ -63,7 +66,7 @@ class ClubCard extends HTMLElement {
 
         localStorage.setItem(this.getAttribute("name"), val);
 
-        
+        //club-iin card likelagdsan bol tuuniig medeelleh zorilgoor Custom event beldej baina.
         const evnt = new CustomEvent('club-like-clicked', {
           composed: true,
           detail: {
@@ -73,7 +76,7 @@ class ClubCard extends HTMLElement {
           }
         });
 
-      
+      //event-g window element ruu tsatsah buyu dispatch hiij ugj bna
       window.dispatchEvent(evnt);
 
       if(!val)
@@ -103,6 +106,7 @@ class ClubCard extends HTMLElement {
       return ["id", "logo", "cover", "name", "category", "desc", "fyear", "members"];
     }
 
+    //Club-iin card-iin utguudiig attributaar awah uchraas attribute ashiglagdah uyd ug function duudagdana
     attributeChangedCallback(name, oldVal, newVal) { 
       switch(name){
         case "id":

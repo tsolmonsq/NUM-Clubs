@@ -4,6 +4,8 @@ import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = 10; 
 
+//Ugugdliin san dahi hereglegchiin medeeleltei haritsah
+
 class DbUser {
   constructor() {}
 

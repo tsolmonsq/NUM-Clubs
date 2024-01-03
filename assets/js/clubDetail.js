@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const clubId = urlParams.get("id");
 
+    //Clubiin delgerengui medeelliig id-aar ni avah
     fetch(`http://localhost:3000/clubs/${clubId}`).then(response => {
         if(!response.ok){
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
+//Delgerengui medeelliig delgetsleh
 function displayClubDetails(clubData) {
     document.querySelector('main').innerHTML =
       `<section class="about-club">
@@ -80,6 +82,7 @@ function displayClubDetails(clubData) {
     console.log(clubData);
   }
 
+//Comment bichih
 function writeComment(clubId){
   const commentForm = document.querySelector('.comment-form');
 
@@ -88,6 +91,9 @@ function writeComment(clubId){
                 
                 const commentInput = document.getElementById('comment').value;
                 const uname = localStorage.getItem("username");
+
+                if(uname === null)
+                alert("Newtreechee");
 
                 if (commentInput.trim() !== '') {
 
@@ -119,6 +125,7 @@ function writeComment(clubId){
 }
 
 
+//Clubiin id-aar ni commentuudiin jagsaaltiig avah
 function getComments(clubId) {
   fetch(`http://localhost:3000/comments/${clubId}`)
       .then(response => {
@@ -128,7 +135,6 @@ function getComments(clubId) {
           return response.json();
       })
       .then(comments => {
-          // Assuming you have a function to display comments, update your UI here
           displayComments(comments);
       })
       .catch(error => {
@@ -136,17 +142,19 @@ function getComments(clubId) {
       });
 }
 
+//Club deh niit commentuudiin toog gargah
 function updateCommentCount(count) {
   const commentCount = document.getElementById("comment-counter");
   commentCount.innerHTML = count;
 }
 
+//Commentiig display hiih
 function displayComments(comments) {
   const commentSection = document.querySelector('.comment-cont');
   commentSection.innerHTML = '';
 
 
-  comments.forEach(comment => {
+  comments.forEach(comment => {`  `
       const commentElement = document.createElement('article');
       commentElement.setAttribute("class", "user-comment");
       

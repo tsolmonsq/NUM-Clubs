@@ -6,6 +6,7 @@ class ClubPage {
     this._nameFilter = this.getUrlParam("name");
   }
 
+  //Niit clubuudiin medeelliig avah
   async fetchData() {
     try {
       const response = await fetch('http://localhost:3000/clubs');
@@ -30,6 +31,7 @@ class ClubPage {
     );
   }
 
+  //Clubiin medeelliig category-oor ni shuuh
   filterByTag(clubData) {
     if (!this._tagFilter || this._tagFilter === "Бүгд") {
       return clubData;
@@ -42,6 +44,7 @@ class ClubPage {
   }
     
     
+  //Clubiin card-iig uusgeh
   createClubCard(club) {
     const clubCard = document.createElement("club-card");
     clubCard.setAttribute("id", club.clubId);
@@ -55,6 +58,7 @@ class ClubPage {
     return clubCard;
   }
 
+  //Render hiih
   render() {
     this.container.innerHTML = "";
     this._list.map((club) => {
@@ -63,6 +67,7 @@ class ClubPage {
     });
   }
     
+  
   getUrlParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -73,6 +78,7 @@ class ClubPage {
     this.render(); 
     this.setDropdownValue(); 
   }
+  
   setDropdownValue() {
     const categoryParam = this.getUrlParam("category");
     if (categoryParam) {

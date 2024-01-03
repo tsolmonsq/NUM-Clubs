@@ -1,9 +1,11 @@
+//Club-iin card dahi like dardag zurhen button-g component bolgow
 class ClubLikeBtn extends HTMLElement {
     constructor() {
         super();
         this.#Render();
         this.eventListenerAdded = false;
     }
+    //Render hiih
     #Render(){
         this.innerHTML = `
         <div class="heart-checkbox" id="heart-button">
@@ -12,6 +14,8 @@ class ClubLikeBtn extends HTMLElement {
         </div>
         `;
     }
+
+    //Ug component deer click darah uyd clickHandler function ajillana.
     connectedCallback() {
         if(!this.eventListenerAdded){
             this.eventListenerAdded = true;
@@ -31,6 +35,7 @@ class ClubLikeBtn extends HTMLElement {
                 evntName = "club-like-btn-liked";
             }
 
+            //Etseg element buyu clubiin cardruu event shidihed beldej baina.
             const evnt = new Event(evntName, 
                 {
                     bubbles: true,
@@ -45,6 +50,7 @@ class ClubLikeBtn extends HTMLElement {
     static get observedAttributes() {
         return ["checked"];
     }
+    
     
     attributeChangedCallback(name, oldVal, newVal) {
         //implementation

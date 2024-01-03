@@ -1,12 +1,17 @@
+// Taalagdsan clubuudiig hadgalah sags component
 class ClubCart extends HTMLElement {
     constructor() {
       super();
-      this.clubs = [];
+
+      // clubuudiin medeelliig hadglah array
+      this.clubs = []; 
       this.attachShadow({ mode: 'open' });
+      
       this.#render();
       this.readFromLocalStorage();
     }
   
+    //render function
     #render() {
       this.shadowRoot.innerHTML = `
         <link
@@ -31,7 +36,10 @@ class ClubCart extends HTMLElement {
       `;
     }
   
+    //element DOM-d nemegdeh uyd duudagddag callback function
     connectedCallback() {
+
+      //club card componentees irsen eventiig barij avj baina
       window.addEventListener("club-like-clicked", (e) => {
         if (e.detail.isLiked) {
           this.addToCart(e.detail.theClub);
@@ -40,7 +48,8 @@ class ClubCart extends HTMLElement {
         }
       });
     }
-  
+    
+    // local storage-ees clubuudiin list awah
     readFromLocalStorage() {
       const clubList = JSON.parse(localStorage.getItem("cart"));
       if (clubList !== null) {
@@ -49,37 +58,25 @@ class ClubCart extends HTMLElement {
       }
     }
   
+    //local storaged shineer nemegdsen clubiig hadgalah
     addToCart(club) {
       this.clubs.push(club);
       localStorage.setItem("cart", JSON.stringify(this.clubs));
       this.#render();
     }
   
+    // club taalagdsan clubuudiin jagsaaltaas hasagdah uyd tuuniig local storage-ees hasah
     removeFromCart(club) {
       const clubIndex = this.clubs.findIndex(c => c.name === club.name);
       if (clubIndex !== -1) {
         this.clubs.splice(clubIndex, 1);
   
-        // const counter = this.shadowRoot.querySelector("#counter");
-        // counter.innerText = parseInt(counter.innerText, 10) - 1;
   
         localStorage.setItem("cart", JSON.stringify(this.clubs));
         this.#render();
       }
     }
-  
-    disconnectedCallback() {
-      // implementation
-    }
-  
-    attributeChangedCallback(name, oldVal, newVal) {
-      // implementation
-    }
-  
-    adoptedCallback() {
-      // implementation
-    }
   }
   
-  window.customElements.define('club-cart', ClubCart);
+window.customElements.define('club-cart', ClubCart);
   

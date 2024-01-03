@@ -1,3 +1,4 @@
+//Windows-iin settings deer dark light mode tohiruulga hiih uyd web site-iin huudas dagaad mode ni uurchlugdunu
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const darkModeToggle = document.getElementById('mode-toggle');
 

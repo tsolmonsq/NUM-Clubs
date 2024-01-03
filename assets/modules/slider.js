@@ -1,3 +1,4 @@
+//Slider guilgeh 
 let currentPage = 0;
 const totalPages = document.querySelectorAll(".page").length;
 

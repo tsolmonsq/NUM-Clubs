@@ -1,5 +1,6 @@
 import dbClubs from "../db/db_clubs.mjs";
 
+//Clubiin medeeleltei haritsah 
 class Clubs{
     constructor(){
         this.clubs = new Map();

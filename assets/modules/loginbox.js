@@ -1,3 +1,4 @@
+//Login bolon sign-up iin modal box-g haruulah
 const openModalButton = document.getElementById('openModal');
 const closeModalButton = document.getElementById('closeModal');
 const loginModal = document.getElementById('loginModal');

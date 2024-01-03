@@ -1,5 +1,6 @@
     import dbUser from "../db/db_user.mjs";
 
+    //Hereglegchiin newtreh, burtguuleh medeeleltei haritsah
     class User {
         constructor() {
             this.users = new Map();

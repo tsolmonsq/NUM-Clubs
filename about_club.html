@@ -138,23 +138,5 @@
     <script src="./js/clubDetail.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/signup.js"></script>
-    <script>
-      let count = 0;
-      function oncomment() {
-        document.querySelector(".comment-section").insertAdjacentHTML(
-          "beforeend",
-          `<club-comment
-                  ognoo="2023/12/06"
-                  txt="${document.getElementById("comment").value}">
-          </club-comment>`
-        );
-        count++;
-        document.getElementById("comment-counter").innerHTML = count;
-      }
-
-      function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
-      }
-    </script>
   </body>
 </html>
