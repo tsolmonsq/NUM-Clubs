@@ -3,7 +3,7 @@ import dbClubs from "../db/db_clubs.mjs";
 class Clubs{
     constructor(){
         this.clubs = new Map();
-        this.sessions = new Map();
+        
     }
 
     async getClubs(req, res){

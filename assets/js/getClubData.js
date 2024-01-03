@@ -109,6 +109,8 @@ searchBtn.addEventListener("click", () => {
   clubPage._list = clubPage.searchByName(searchVal);
   clubPage.render();
 });
+
+
   
   
 

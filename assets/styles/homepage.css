@@ -85,6 +85,10 @@
         display: flex;
         margin: 0 1.25rem;
         justify-content: space-between;
+
+        & a {
+            text-decoration: none;
+        }
     }
 
     & .button {
@@ -127,6 +131,8 @@
             cursor: pointer;
         }
     }
+
+
 }
 
 .featured-clubs {
@@ -166,7 +172,5 @@
         margin-bottom: 4rem;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-
     }
-
 }

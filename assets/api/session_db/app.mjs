@@ -5,9 +5,7 @@ import cors from 'cors';
 
 import clubs from './routes/clubs.mjs';
 import user from './routes/users.mjs';
-
-// import comments from './routes/comments.mjs';
-
+import comment from './routes/comments.mjs';
 
 
 const app = express();
@@ -51,11 +49,6 @@ app.get('/events', async(req, res) => {
   res.sendFile('./events.html', options);
 })
 
-
-// app.get('/login', async(req, res) => {
-//   res.sendFile('./login.html', options);
-// })
-
 app.post('/signup', async (req, res) => {
   await user.signup(req, res);
 })
@@ -78,26 +71,12 @@ app.get('/logout', (req, res) => {
   res.status(200).send();
 });
 
+app.post('/writecomment', async(req, res) => {
+  await comment.writeComment(req, res);
+});
 
-// app.get('/dashboard', (req, res) => {
-//   res.sendFile('./dashboard.html', options);
-// })
-
-
-// app.post('/logout', (req, res) => {
-
-//   res.clearCookie('session_id');
-
-//   user.sessions.delete(Number(req.cookies.session_id));
-
-//   res.status(200).send('Logged out');
-// });
-
-
-// app.use('comments',comments);
-
-
-
-
+app.get('/comments/:id', async(req, res) =>{
+  await comment.getCommentsByClubId(req, res);
+})
 
 app.listen(port, () => console.log(`App listening on port http://localhost:${port}`));

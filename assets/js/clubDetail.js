@@ -7,11 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
+
     }).then(clubData => {
+
         displayClubDetails(clubData);
+        writeComment(clubId);
+        getComments(clubId);
+
+        
     }).catch(error => {
         console.error("Error fetching club details:", error.message);
     })
+    
 });
 
 function displayClubDetails(clubData) {
@@ -49,11 +56,12 @@ function displayClubDetails(clubData) {
             </div>
             <section class="comment-section">
               <h2>Сэтгэгдлүүд <span id="comment-counter">0</span></h2>
+              <div class="comment-cont"></div>
             </section>
             <form class="comment-form">
               <label for="comment">Сэтгэгдэл бичих</label>
               <input type="text" name="comment" id="comment" placeholder="Таны сэтгэгдэл" />
-              <input type="button" onclick="oncomment()" value="Бичих" />
+              <input type="submit" id="commentBtn" value="Бичих" />
             </form>
           </div>
           <div class="right">
@@ -66,12 +74,89 @@ function displayClubDetails(clubData) {
                 <li><a href="#"><i class="fa-regular fa-envelope"></i>example@gmail</a></li>
               </ul>
             </address>
-            <div class="members">
-              <!-- Member cards go here -->
-            </div>
           </div>
         </div>
       </section>`;
     console.log(clubData);
   }
+
+function writeComment(clubId){
+  const commentForm = document.querySelector('.comment-form');
+
+            commentForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                const commentInput = document.getElementById('comment').value;
+                const uname = localStorage.getItem("username");
+
+                if (commentInput.trim() !== '') {
+
+                    const commentData = {
+                        text: commentInput,
+                        username: uname,
+                        clubId: clubId,
+                    };
+
+                    fetch('http://localhost:3000/writecomment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(commentData)
+                    }).then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    }).then(responseData => {
+                        console.log('Comment posted successfully:', responseData);
+                        getComments(clubId);
+                    }).catch(error => {
+                        console.error("Error posting comment:", error.message);
+                    });
+                }
+            });
+}
+
+
+function getComments(clubId) {
+  fetch(`http://localhost:3000/comments/${clubId}`)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(comments => {
+          // Assuming you have a function to display comments, update your UI here
+          displayComments(comments);
+      })
+      .catch(error => {
+          console.error("Error fetching comments:", error.message);
+      });
+}
+
+function updateCommentCount(count) {
+  const commentCount = document.getElementById("comment-counter");
+  commentCount.innerHTML = count;
+}
+
+function displayComments(comments) {
+  const commentSection = document.querySelector('.comment-cont');
+  commentSection.innerHTML = '';
+
+
+  comments.forEach(comment => {
+      const commentElement = document.createElement('article');
+      commentElement.setAttribute("class", "user-comment");
+      
+      commentElement.innerHTML = `
+        <span >${comment.username}</span>
+        <p>${comment.text}</p>
+      `
+      commentSection.appendChild(commentElement);
+  });
+
+  updateCommentCount(comments.length);
+}
   

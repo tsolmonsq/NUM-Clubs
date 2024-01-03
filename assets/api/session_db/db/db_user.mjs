@@ -7,18 +7,6 @@ const SALT_ROUNDS = 10;
 class DbUser {
   constructor() {}
 
-  // async isUsernameTaken(username) {
-  //   try {
-  //     const result = await sql`
-  //       SELECT id FROM public.users WHERE username = ${username};
-  //     `;
-  //     return result.length > 0;
-  //   } catch (error) {
-  //     console.error('Error checking username:', error);
-  //     throw error;
-  //   }
-  // }
-
   async isEmailTaken(email) {
     try {
       const result = await sql`
